@@ -131,6 +131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 45
+  mouseSensitivty: 5
+  upDownRange: 60
 --- !u!1001 &229027348
 Prefab:
   m_ObjectHideFlags: 0

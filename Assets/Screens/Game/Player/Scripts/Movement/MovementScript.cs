@@ -8,6 +8,12 @@ public class MovementScript : MonoBehaviour {
 	private CharacterController cc;
 	private Camera camera;
 	public float moveSpeed = 45f;
+	public float mouseSensitivty = 5f;
+	
+	public float upDownRange = 60.0f;
+	private float verticalRotation = 0;
+	
+	
 	// Use this for initialization
 	void Start () {
 		//Init the variables
@@ -26,13 +32,29 @@ public class MovementScript : MonoBehaviour {
 	
 		
 		
-		
-		cc.Move(checkKeyInput()*moveSpeed * Time.deltaTime);
+		rotateHead();
+		cc.Move(transform.TransformDirection(checkKeyInput())*moveSpeed * Time.deltaTime);
 		
 		
 		
 	}
-	
+	private void rotateHead() {
+		transform.Rotate(new Vector3(0,Input.GetAxis("Mouse X")*mouseSensitivty,0));
+		
+		//Inverted because it will be interted otherwise :P
+		verticalRotation -=Input.GetAxis("Mouse Y") * mouseSensitivty;
+		verticalRotation  = Mathf.Clamp(verticalRotation,-upDownRange,upDownRange);
+		camera.transform.localRotation = Quaternion.Euler(verticalRotation,0,0);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
 	
 	private Vector3 checkKeyInput() {
 		
