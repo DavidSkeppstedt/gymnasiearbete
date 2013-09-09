@@ -12,6 +12,7 @@ public class MovementScript : MonoBehaviour {
 	
 	public float upDownRange = 60.0f;
 	private float verticalRotation = 0;
+	private Vector3 moveVector;
 	
 	
 	// Use this for initialization
@@ -33,7 +34,7 @@ public class MovementScript : MonoBehaviour {
 		
 		
 		rotateHead();
-		cc.Move(transform.TransformDirection(checkKeyInput())*moveSpeed * Time.deltaTime);
+		cc.Move(checkKeyInput()* Time.deltaTime);
 		
 		
 		
@@ -57,13 +58,22 @@ public class MovementScript : MonoBehaviour {
 	}
 	
 	private Vector3 checkKeyInput() {
+		if (cc.isGrounded) {
+			moveVector = new Vector3 (
+				Input.GetAxis("Horizontal")*moveSpeed,
+				0,
+				Input.GetAxis("Vertical")*moveSpeed
+				);
+			moveVector = transform.TransformDirection(moveVector);
+			if (Input.GetButton("Jump")) {
+				moveVector.y = 15;
+			}
+	
+		}
 		
+		moveVector.y += Physics.gravity.y *Time.deltaTime;
 		
-		float x = Input.GetAxis("Horizontal");
-		float z = Input.GetAxis("Vertical");
-		float y = Physics.gravity.y;
-		
-		return new Vector3(x,y,z);
+		return moveVector;
 		
 	}
 	

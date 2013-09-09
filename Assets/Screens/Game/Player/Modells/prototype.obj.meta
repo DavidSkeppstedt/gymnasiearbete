@@ -1,0 +1,476 @@
+fileFormatVersion: 2
+guid: 2b973ffec4aa74d418f8265921dba0c8
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: Null_Cloner Cube_1_0
+    100002: Null_Cloner Cube_1_1
+    100004: Null_Cloner Cube_1_10
+    100006: Null_Cloner Cube_1_11
+    100008: Null_Cloner Cube_1_12
+    100010: Null_Cloner Cube_1_13
+    100012: Null_Cloner Cube_1_14
+    100014: Null_Cloner Cube_1_15
+    100016: Null_Cloner Cube_1_16
+    100018: Null_Cloner Cube_1_17
+    100020: Null_Cloner Cube_1_18
+    100022: Null_Cloner Cube_1_19
+    100024: Null_Cloner Cube_1_2
+    100026: Null_Cloner Cube_1_20
+    100028: Null_Cloner Cube_1_21
+    100030: Null_Cloner Cube_1_22
+    100032: Null_Cloner Cube_1_23
+    100034: Null_Cloner Cube_1_24
+    100036: Null_Cloner Cube_1_25
+    100038: Null_Cloner Cube_1_26
+    100040: Null_Cloner Cube_1_27
+    100042: Null_Cloner Cube_1_28
+    100044: Null_Cloner Cube_1_29
+    100046: Null_Cloner Cube_1_3
+    100048: Null_Cloner Cube_1_30
+    100050: Null_Cloner Cube_1_31
+    100052: Null_Cloner Cube_1_32
+    100054: Null_Cloner Cube_1_33
+    100056: Null_Cloner Cube_1_34
+    100058: Null_Cloner Cube_1_35
+    100060: Null_Cloner Cube_1_36
+    100062: Null_Cloner Cube_1_37
+    100064: Null_Cloner Cube_1_38
+    100066: Null_Cloner Cube_1_39
+    100068: Null_Cloner Cube_1_4
+    100070: Null_Cloner Cube_1_40
+    100072: Null_Cloner Cube_1_41
+    100074: Null_Cloner Cube_1_42
+    100076: Null_Cloner Cube_1_43
+    100078: Null_Cloner Cube_1_44
+    100080: Null_Cloner Cube_1_45
+    100082: Null_Cloner Cube_1_46
+    100084: Null_Cloner Cube_1_47
+    100086: Null_Cloner Cube_1_48
+    100088: Null_Cloner Cube_1_49
+    100090: Null_Cloner Cube_1_5
+    100092: Null_Cloner Cube_1_50
+    100094: Null_Cloner Cube_1_51
+    100096: Null_Cloner Cube_1_6
+    100098: Null_Cloner Cube_1_7
+    100100: Null_Cloner Cube_1_8
+    100102: Null_Cloner Cube_1_9
+    100104: Null_Cube_12
+    100106: Null_HyperNURBS HyperNURBS1 Tube1
+    100108: Null_HyperNURBS Tube
+    100110: Null_HyperNURBS_1
+    100112: Null_MAIN Cube
+    100114: Null_Symmetry Cube_1
+    100116: Null_Symmetry_1 HyperNURBS_3 Cube1
+    100118: Null_Symmetry_1 HyperNURBS_3 Cube1_MeshPart0
+    100120: Null_Symmetry_1 HyperNURBS_3 Cube1_MeshPart1
+    100122: Null_Symmetry_1 HyperNURBS_3 Cube1_MeshPart2
+    100124: Null_Symmetry_1 HyperNURBS_3 Cube1_MeshPart3
+    100126: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw Boole Extrude_NURBS
+    100128: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw Boole Extrude_NURBS Cap_1
+    100130: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw Boole Oil_Tank
+    100132: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw_1 Boole1 Extrude_NURBS1
+    100134: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw_1 Boole1 Extrude_NURBS1 Cap_11
+    100136: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw_1 Boole1 Oil_Tank1
+    100138: Null_Symmetry_2 Cube_11
+    100140: //RootNode
+    400000: Null_Cloner Cube_1_0
+    400002: Null_Cloner Cube_1_1
+    400004: Null_Cloner Cube_1_10
+    400006: Null_Cloner Cube_1_11
+    400008: Null_Cloner Cube_1_12
+    400010: Null_Cloner Cube_1_13
+    400012: Null_Cloner Cube_1_14
+    400014: Null_Cloner Cube_1_15
+    400016: Null_Cloner Cube_1_16
+    400018: Null_Cloner Cube_1_17
+    400020: Null_Cloner Cube_1_18
+    400022: Null_Cloner Cube_1_19
+    400024: Null_Cloner Cube_1_2
+    400026: Null_Cloner Cube_1_20
+    400028: Null_Cloner Cube_1_21
+    400030: Null_Cloner Cube_1_22
+    400032: Null_Cloner Cube_1_23
+    400034: Null_Cloner Cube_1_24
+    400036: Null_Cloner Cube_1_25
+    400038: Null_Cloner Cube_1_26
+    400040: Null_Cloner Cube_1_27
+    400042: Null_Cloner Cube_1_28
+    400044: Null_Cloner Cube_1_29
+    400046: Null_Cloner Cube_1_3
+    400048: Null_Cloner Cube_1_30
+    400050: Null_Cloner Cube_1_31
+    400052: Null_Cloner Cube_1_32
+    400054: Null_Cloner Cube_1_33
+    400056: Null_Cloner Cube_1_34
+    400058: Null_Cloner Cube_1_35
+    400060: Null_Cloner Cube_1_36
+    400062: Null_Cloner Cube_1_37
+    400064: Null_Cloner Cube_1_38
+    400066: Null_Cloner Cube_1_39
+    400068: Null_Cloner Cube_1_4
+    400070: Null_Cloner Cube_1_40
+    400072: Null_Cloner Cube_1_41
+    400074: Null_Cloner Cube_1_42
+    400076: Null_Cloner Cube_1_43
+    400078: Null_Cloner Cube_1_44
+    400080: Null_Cloner Cube_1_45
+    400082: Null_Cloner Cube_1_46
+    400084: Null_Cloner Cube_1_47
+    400086: Null_Cloner Cube_1_48
+    400088: Null_Cloner Cube_1_49
+    400090: Null_Cloner Cube_1_5
+    400092: Null_Cloner Cube_1_50
+    400094: Null_Cloner Cube_1_51
+    400096: Null_Cloner Cube_1_6
+    400098: Null_Cloner Cube_1_7
+    400100: Null_Cloner Cube_1_8
+    400102: Null_Cloner Cube_1_9
+    400104: Null_Cube_12
+    400106: Null_HyperNURBS HyperNURBS1 Tube1
+    400108: Null_HyperNURBS Tube
+    400110: Null_HyperNURBS_1
+    400112: Null_MAIN Cube
+    400114: Null_Symmetry Cube_1
+    400116: Null_Symmetry_1 HyperNURBS_3 Cube1
+    400118: Null_Symmetry_1 HyperNURBS_3 Cube1_MeshPart0
+    400120: Null_Symmetry_1 HyperNURBS_3 Cube1_MeshPart1
+    400122: Null_Symmetry_1 HyperNURBS_3 Cube1_MeshPart2
+    400124: Null_Symmetry_1 HyperNURBS_3 Cube1_MeshPart3
+    400126: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw Boole Extrude_NURBS
+    400128: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw Boole Extrude_NURBS Cap_1
+    400130: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw Boole Oil_Tank
+    400132: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw_1 Boole1 Extrude_NURBS1
+    400134: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw_1 Boole1 Extrude_NURBS1 Cap_11
+    400136: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw_1 Boole1 Oil_Tank1
+    400138: Null_Symmetry_2 Cube_11
+    400140: //RootNode
+    2300000: Null_Cloner Cube_1_0
+    2300002: Null_Cloner Cube_1_1
+    2300004: Null_Cloner Cube_1_10
+    2300006: Null_Cloner Cube_1_11
+    2300008: Null_Cloner Cube_1_12
+    2300010: Null_Cloner Cube_1_13
+    2300012: Null_Cloner Cube_1_14
+    2300014: Null_Cloner Cube_1_15
+    2300016: Null_Cloner Cube_1_16
+    2300018: Null_Cloner Cube_1_17
+    2300020: Null_Cloner Cube_1_18
+    2300022: Null_Cloner Cube_1_19
+    2300024: Null_Cloner Cube_1_2
+    2300026: Null_Cloner Cube_1_20
+    2300028: Null_Cloner Cube_1_21
+    2300030: Null_Cloner Cube_1_22
+    2300032: Null_Cloner Cube_1_23
+    2300034: Null_Cloner Cube_1_24
+    2300036: Null_Cloner Cube_1_25
+    2300038: Null_Cloner Cube_1_26
+    2300040: Null_Cloner Cube_1_27
+    2300042: Null_Cloner Cube_1_28
+    2300044: Null_Cloner Cube_1_29
+    2300046: Null_Cloner Cube_1_3
+    2300048: Null_Cloner Cube_1_30
+    2300050: Null_Cloner Cube_1_31
+    2300052: Null_Cloner Cube_1_32
+    2300054: Null_Cloner Cube_1_33
+    2300056: Null_Cloner Cube_1_34
+    2300058: Null_Cloner Cube_1_35
+    2300060: Null_Cloner Cube_1_36
+    2300062: Null_Cloner Cube_1_37
+    2300064: Null_Cloner Cube_1_38
+    2300066: Null_Cloner Cube_1_39
+    2300068: Null_Cloner Cube_1_4
+    2300070: Null_Cloner Cube_1_40
+    2300072: Null_Cloner Cube_1_41
+    2300074: Null_Cloner Cube_1_42
+    2300076: Null_Cloner Cube_1_43
+    2300078: Null_Cloner Cube_1_44
+    2300080: Null_Cloner Cube_1_45
+    2300082: Null_Cloner Cube_1_46
+    2300084: Null_Cloner Cube_1_47
+    2300086: Null_Cloner Cube_1_48
+    2300088: Null_Cloner Cube_1_49
+    2300090: Null_Cloner Cube_1_5
+    2300092: Null_Cloner Cube_1_50
+    2300094: Null_Cloner Cube_1_51
+    2300096: Null_Cloner Cube_1_6
+    2300098: Null_Cloner Cube_1_7
+    2300100: Null_Cloner Cube_1_8
+    2300102: Null_Cloner Cube_1_9
+    2300104: Null_Cube_12
+    2300106: Null_HyperNURBS HyperNURBS1 Tube1
+    2300108: Null_HyperNURBS Tube
+    2300110: Null_HyperNURBS_1
+    2300112: Null_MAIN Cube
+    2300114: Null_Symmetry Cube_1
+    2300116: Null_Symmetry_1 HyperNURBS_3 Cube1_MeshPart0
+    2300118: Null_Symmetry_1 HyperNURBS_3 Cube1_MeshPart1
+    2300120: Null_Symmetry_1 HyperNURBS_3 Cube1_MeshPart2
+    2300122: Null_Symmetry_1 HyperNURBS_3 Cube1_MeshPart3
+    2300124: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw Boole Extrude_NURBS
+    2300126: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw Boole Extrude_NURBS Cap_1
+    2300128: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw Boole Oil_Tank
+    2300130: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw_1 Boole1 Extrude_NURBS1
+    2300132: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw_1 Boole1 Extrude_NURBS1 Cap_11
+    2300134: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw_1 Boole1 Oil_Tank1
+    2300136: Null_Symmetry_2 Cube_11
+    3300000: Null_Cloner Cube_1_0
+    3300002: Null_Cloner Cube_1_1
+    3300004: Null_Cloner Cube_1_10
+    3300006: Null_Cloner Cube_1_11
+    3300008: Null_Cloner Cube_1_12
+    3300010: Null_Cloner Cube_1_13
+    3300012: Null_Cloner Cube_1_14
+    3300014: Null_Cloner Cube_1_15
+    3300016: Null_Cloner Cube_1_16
+    3300018: Null_Cloner Cube_1_17
+    3300020: Null_Cloner Cube_1_18
+    3300022: Null_Cloner Cube_1_19
+    3300024: Null_Cloner Cube_1_2
+    3300026: Null_Cloner Cube_1_20
+    3300028: Null_Cloner Cube_1_21
+    3300030: Null_Cloner Cube_1_22
+    3300032: Null_Cloner Cube_1_23
+    3300034: Null_Cloner Cube_1_24
+    3300036: Null_Cloner Cube_1_25
+    3300038: Null_Cloner Cube_1_26
+    3300040: Null_Cloner Cube_1_27
+    3300042: Null_Cloner Cube_1_28
+    3300044: Null_Cloner Cube_1_29
+    3300046: Null_Cloner Cube_1_3
+    3300048: Null_Cloner Cube_1_30
+    3300050: Null_Cloner Cube_1_31
+    3300052: Null_Cloner Cube_1_32
+    3300054: Null_Cloner Cube_1_33
+    3300056: Null_Cloner Cube_1_34
+    3300058: Null_Cloner Cube_1_35
+    3300060: Null_Cloner Cube_1_36
+    3300062: Null_Cloner Cube_1_37
+    3300064: Null_Cloner Cube_1_38
+    3300066: Null_Cloner Cube_1_39
+    3300068: Null_Cloner Cube_1_4
+    3300070: Null_Cloner Cube_1_40
+    3300072: Null_Cloner Cube_1_41
+    3300074: Null_Cloner Cube_1_42
+    3300076: Null_Cloner Cube_1_43
+    3300078: Null_Cloner Cube_1_44
+    3300080: Null_Cloner Cube_1_45
+    3300082: Null_Cloner Cube_1_46
+    3300084: Null_Cloner Cube_1_47
+    3300086: Null_Cloner Cube_1_48
+    3300088: Null_Cloner Cube_1_49
+    3300090: Null_Cloner Cube_1_5
+    3300092: Null_Cloner Cube_1_50
+    3300094: Null_Cloner Cube_1_51
+    3300096: Null_Cloner Cube_1_6
+    3300098: Null_Cloner Cube_1_7
+    3300100: Null_Cloner Cube_1_8
+    3300102: Null_Cloner Cube_1_9
+    3300104: Null_Cube_12
+    3300106: Null_HyperNURBS HyperNURBS1 Tube1
+    3300108: Null_HyperNURBS Tube
+    3300110: Null_HyperNURBS_1
+    3300112: Null_MAIN Cube
+    3300114: Null_Symmetry Cube_1
+    3300116: Null_Symmetry_1 HyperNURBS_3 Cube1_MeshPart0
+    3300118: Null_Symmetry_1 HyperNURBS_3 Cube1_MeshPart1
+    3300120: Null_Symmetry_1 HyperNURBS_3 Cube1_MeshPart2
+    3300122: Null_Symmetry_1 HyperNURBS_3 Cube1_MeshPart3
+    3300124: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw Boole Extrude_NURBS
+    3300126: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw Boole Extrude_NURBS Cap_1
+    3300128: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw Boole Oil_Tank
+    3300130: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw_1 Boole1 Extrude_NURBS1
+    3300132: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw_1 Boole1 Extrude_NURBS1 Cap_11
+    3300134: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw_1 Boole1 Oil_Tank1
+    3300136: Null_Symmetry_2 Cube_11
+    4300000: Null_Cloner Cube_1_0
+    4300002: Null_Cloner Cube_1_1
+    4300004: Null_Cloner Cube_1_10
+    4300006: Null_Cloner Cube_1_11
+    4300008: Null_Cloner Cube_1_12
+    4300010: Null_Cloner Cube_1_13
+    4300012: Null_Cloner Cube_1_14
+    4300014: Null_Cloner Cube_1_15
+    4300016: Null_Cloner Cube_1_16
+    4300018: Null_Cloner Cube_1_17
+    4300020: Null_Cloner Cube_1_18
+    4300022: Null_Cloner Cube_1_19
+    4300024: Null_Cloner Cube_1_2
+    4300026: Null_Cloner Cube_1_20
+    4300028: Null_Cloner Cube_1_21
+    4300030: Null_Cloner Cube_1_22
+    4300032: Null_Cloner Cube_1_23
+    4300034: Null_Cloner Cube_1_24
+    4300036: Null_Cloner Cube_1_25
+    4300038: Null_Cloner Cube_1_26
+    4300040: Null_Cloner Cube_1_27
+    4300042: Null_Cloner Cube_1_28
+    4300044: Null_Cloner Cube_1_29
+    4300046: Null_Cloner Cube_1_3
+    4300048: Null_Cloner Cube_1_30
+    4300050: Null_Cloner Cube_1_31
+    4300052: Null_Cloner Cube_1_32
+    4300054: Null_Cloner Cube_1_33
+    4300056: Null_Cloner Cube_1_34
+    4300058: Null_Cloner Cube_1_35
+    4300060: Null_Cloner Cube_1_36
+    4300062: Null_Cloner Cube_1_37
+    4300064: Null_Cloner Cube_1_38
+    4300066: Null_Cloner Cube_1_39
+    4300068: Null_Cloner Cube_1_4
+    4300070: Null_Cloner Cube_1_40
+    4300072: Null_Cloner Cube_1_41
+    4300074: Null_Cloner Cube_1_42
+    4300076: Null_Cloner Cube_1_43
+    4300078: Null_Cloner Cube_1_44
+    4300080: Null_Cloner Cube_1_45
+    4300082: Null_Cloner Cube_1_46
+    4300084: Null_Cloner Cube_1_47
+    4300086: Null_Cloner Cube_1_48
+    4300088: Null_Cloner Cube_1_49
+    4300090: Null_Cloner Cube_1_5
+    4300092: Null_Cloner Cube_1_50
+    4300094: Null_Cloner Cube_1_51
+    4300096: Null_Cloner Cube_1_6
+    4300098: Null_Cloner Cube_1_7
+    4300100: Null_Cloner Cube_1_8
+    4300102: Null_Cloner Cube_1_9
+    4300104: Null_Cube_12
+    4300106: Null_HyperNURBS HyperNURBS1 Tube1
+    4300108: Null_HyperNURBS Tube
+    4300110: Null_HyperNURBS_1
+    4300112: Null_MAIN Cube
+    4300114: Null_Symmetry Cube_1
+    4300116: Null_Symmetry_1 HyperNURBS_3 Cube1_MeshPart0
+    4300118: Null_Symmetry_1 HyperNURBS_3 Cube1_MeshPart1
+    4300120: Null_Symmetry_1 HyperNURBS_3 Cube1_MeshPart2
+    4300122: Null_Symmetry_1 HyperNURBS_3 Cube1_MeshPart3
+    4300124: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw Boole Extrude_NURBS
+    4300126: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw Boole Extrude_NURBS Cap_1
+    4300128: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw Boole Oil_Tank
+    4300130: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw_1 Boole1 Extrude_NURBS1
+    4300132: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw_1 Boole1 Extrude_NURBS1 Cap_11
+    4300134: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw_1 Boole1 Oil_Tank1
+    4300136: Null_Symmetry_2 Cube_11
+    6400000: Null_Cloner Cube_1_0
+    6400002: Null_Cloner Cube_1_1
+    6400004: Null_Cloner Cube_1_10
+    6400006: Null_Cloner Cube_1_11
+    6400008: Null_Cloner Cube_1_12
+    6400010: Null_Cloner Cube_1_13
+    6400012: Null_Cloner Cube_1_14
+    6400014: Null_Cloner Cube_1_15
+    6400016: Null_Cloner Cube_1_16
+    6400018: Null_Cloner Cube_1_17
+    6400020: Null_Cloner Cube_1_18
+    6400022: Null_Cloner Cube_1_19
+    6400024: Null_Cloner Cube_1_2
+    6400026: Null_Cloner Cube_1_20
+    6400028: Null_Cloner Cube_1_21
+    6400030: Null_Cloner Cube_1_22
+    6400032: Null_Cloner Cube_1_23
+    6400034: Null_Cloner Cube_1_24
+    6400036: Null_Cloner Cube_1_25
+    6400038: Null_Cloner Cube_1_26
+    6400040: Null_Cloner Cube_1_27
+    6400042: Null_Cloner Cube_1_28
+    6400044: Null_Cloner Cube_1_29
+    6400046: Null_Cloner Cube_1_3
+    6400048: Null_Cloner Cube_1_30
+    6400050: Null_Cloner Cube_1_31
+    6400052: Null_Cloner Cube_1_32
+    6400054: Null_Cloner Cube_1_33
+    6400056: Null_Cloner Cube_1_34
+    6400058: Null_Cloner Cube_1_35
+    6400060: Null_Cloner Cube_1_36
+    6400062: Null_Cloner Cube_1_37
+    6400064: Null_Cloner Cube_1_38
+    6400066: Null_Cloner Cube_1_39
+    6400068: Null_Cloner Cube_1_4
+    6400070: Null_Cloner Cube_1_40
+    6400072: Null_Cloner Cube_1_41
+    6400074: Null_Cloner Cube_1_42
+    6400076: Null_Cloner Cube_1_43
+    6400078: Null_Cloner Cube_1_44
+    6400080: Null_Cloner Cube_1_45
+    6400082: Null_Cloner Cube_1_46
+    6400084: Null_Cloner Cube_1_47
+    6400086: Null_Cloner Cube_1_48
+    6400088: Null_Cloner Cube_1_49
+    6400090: Null_Cloner Cube_1_5
+    6400092: Null_Cloner Cube_1_50
+    6400094: Null_Cloner Cube_1_51
+    6400096: Null_Cloner Cube_1_6
+    6400098: Null_Cloner Cube_1_7
+    6400100: Null_Cloner Cube_1_8
+    6400102: Null_Cloner Cube_1_9
+    6400104: Null_Cube_12
+    6400106: Null_HyperNURBS HyperNURBS1 Tube1
+    6400108: Null_HyperNURBS Tube
+    6400110: Null_HyperNURBS_1
+    6400112: Null_MAIN Cube
+    6400114: Null_Symmetry Cube_1
+    6400116: Null_Symmetry_1 HyperNURBS_3 Cube1_MeshPart0
+    6400118: Null_Symmetry_1 HyperNURBS_3 Cube1_MeshPart1
+    6400120: Null_Symmetry_1 HyperNURBS_3 Cube1_MeshPart2
+    6400122: Null_Symmetry_1 HyperNURBS_3 Cube1_MeshPart3
+    6400124: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw Boole Extrude_NURBS
+    6400126: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw Boole Extrude_NURBS Cap_1
+    6400128: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw Boole Oil_Tank
+    6400130: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw_1 Boole1 Extrude_NURBS1
+    6400132: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw_1 Boole1 Extrude_NURBS1 Cap_11
+    6400134: Null_Symmetry_1 HyperNURBS_3 SCrewas Screw_1 Boole1 Oil_Tank1
+    6400136: Null_Symmetry_2 Cube_11
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 2
+  userData: 
