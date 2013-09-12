@@ -7,7 +7,7 @@ public class MovementScript : MonoBehaviour {
 	//Declare variabler
 	private CharacterController cc;
 	private Camera camera;
-	public float moveSpeed = 45f;
+	public float moveSpeed = 35f;
 	public float mouseSensitivty = 5f;
 	
 	public float upDownRange = 60.0f;
@@ -20,6 +20,8 @@ public class MovementScript : MonoBehaviour {
 		//Init the variables
 		cc = GetComponent<CharacterController>();
 		camera = GetComponentInChildren<Camera>(); // The main fps camera
+		//Hide the cursor
+		Screen.showCursor = false;
 		
 	}
 	
@@ -66,7 +68,7 @@ public class MovementScript : MonoBehaviour {
 				);
 			moveVector = transform.TransformDirection(moveVector);
 			if (Input.GetButton("Jump")) {
-				moveVector.y = 15;
+				moveVector.y = 10;
 			}
 	
 		}
