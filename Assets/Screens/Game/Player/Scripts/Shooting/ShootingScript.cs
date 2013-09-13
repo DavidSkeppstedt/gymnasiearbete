@@ -17,11 +17,21 @@ public class ShootingScript : MonoBehaviour {
 	void Update () {
 		
 		
+		RaycastHit hit;
+		Vector3 fwd = transform.TransformDirection(gun.transform.forward);
+		if (Physics.Raycast(gun.transform.position,fwd,out hit, 25)) {
+			Debug.Log(hit.collider.gameObject.name);
+			Debug.DrawLine(transform.position,hit.point);
+		}
+		
+		
+		
 		if (Input.GetButtonDown("Fire1")) {
 			if (canShoot) {
-				Debug.Log("Shoot!");
+				
 				canShoot = false;
 				shoot();
+				
 			}
 		}else if (Input.GetButtonUp("Fire1")) {
 			canShoot = true;
@@ -40,6 +50,9 @@ public class ShootingScript : MonoBehaviour {
 		o.rigidbody.AddForce(o.transform.forward*1000);
 		Destroy(o,120);
 		
+		
+		
+	
 		
 		
 	}
