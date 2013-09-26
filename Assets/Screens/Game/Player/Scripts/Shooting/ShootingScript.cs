@@ -11,6 +11,7 @@ public class ShootingScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		gun = GameObject.Find("weapon");
+		Screen.lockCursor = true;
 	}
 	
 	// Update is called once per frame
@@ -19,44 +20,63 @@ public class ShootingScript : MonoBehaviour {
 		
 		RaycastHit hit;
 		Vector3 fwd = transform.TransformDirection(gun.transform.forward);
-		if (Physics.Raycast(gun.transform.position,fwd,out hit, 25)) {
+		Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width*0.5f,Screen.height*0.5f,0));
+		
+		if (Physics.Raycast(ray,out hit, 100)) {
 			Debug.Log(hit.collider.gameObject.name);
-			Debug.DrawLine(transform.position,hit.point);
-		}
+			Debug.DrawLine(gun.transform.position,hit.point);
+			
 		
-		
-		
-		if (Input.GetButtonDown("Fire1")) {
-			if (canShoot) {
-				
-				canShoot = false;
-				shoot();
-				
+			if (Input.GetButtonDown("Fire1")) {
+				if (canShoot) {
+					
+					canShoot = false;
+					shoot(hit.collider,hit.point);
+					
+					
+				}
+			}else if (Input.GetButtonUp("Fire1")) {
+					canShoot = true;
 			}
-		}else if (Input.GetButtonUp("Fire1")) {
-			canShoot = true;
+
 		}
 		
+		
+		
+		
+		
 	
 	}
 	
-	
-	private void shoot() {
+	// Here we check what is shot
+	private void shoot(Collider collider,Vector3 hit) {
+			
 		
-		Vector3 pos = gun.transform.position;
-		//pos.z +=2;
-		GameObject o = Instantiate(projectil,pos,gun.transform.rotation) as GameObject;
-	
-		o.rigidbody.AddForce(o.transform.forward*1000);
-		Destroy(o,120);
-		
-		
-		
-	
-		
-		
+			if (collider.name == "Cube") {
+				pulseGun(hit,collider);	
+			}	
 	}
 	
+	
+	
+	
+	//Here we apply wich gun we want,
+	
+	//This is the pulseGun!
+	private void pulseGun(Vector3 hit, Collider collider) {
+				
+				Rigidbody r= collider.rigidbody;
+				r.AddTorque(hit*150,ForceMode.Impulse);
+				r.AddForceAtPosition(2000*transform.forward,hit);
+		}	
+
+
+
 
 
 }
+
+
+
+
+
