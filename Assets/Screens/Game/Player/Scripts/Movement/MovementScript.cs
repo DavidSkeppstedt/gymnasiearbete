@@ -10,9 +10,11 @@ public class MovementScript : MonoBehaviour {
 	public float moveSpeed = 35f;
 	public float mouseSensitivty = 5f;
 	
+	
 	public float upDownRange = 60.0f;
 	private float verticalRotation = 0;
 	private Vector3 moveVector;
+	
 	
 	
 	// Use this for initialization
