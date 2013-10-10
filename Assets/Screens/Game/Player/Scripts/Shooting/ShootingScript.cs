@@ -13,9 +13,19 @@ public class ShootingScript : MonoBehaviour {
 	private bool countDown = false;
 	// Use this for initialization
 	void Start () {
-		gun = GameObject.Find("weapon");
+		gun = GameObject.Find("Puls");
 		Screen.lockCursor = true;
 	}
+	
+	
+	void setGun(GameObject other) {
+		gun = other;
+		
+		
+	}
+	
+	
+	
 	
 	// Update is called once per frame
 	void Update () {

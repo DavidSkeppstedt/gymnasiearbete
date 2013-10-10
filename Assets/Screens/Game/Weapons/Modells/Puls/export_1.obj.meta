@@ -1,0 +1,115 @@
+fileFormatVersion: 2
+guid: a105d8e99875fa143acca7669819368a
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Pulse_Rifle_Back_rail Back_railing
+    100004: Pulse_Rifle_Front_panel Front_panel1
+    100006: Pulse_Rifle_Front_panel Front_panel1 Screws Left_screw
+    100008: Pulse_Rifle_Front_panel Front_panel1 Screws Right_screw
+    100010: Pulse_Rifle_MAIN Grip_1
+    100012: Pulse_Rifle_MAIN Main_Chape
+    100014: Pulse_Rifle_Recoil Down_recoil
+    100016: Pulse_Rifle_Recoil Upper_recoil
+    100018: Pulse_Rifle_Stracks Back_strack
+    100020: Pulse_Rifle_Stracks Front_strack
+    100022: Pulse_Rifle_Underrail Under_rail
+    400000: //RootNode
+    400002: Pulse_Rifle_Back_rail Back_railing
+    400004: Pulse_Rifle_Front_panel Front_panel1
+    400006: Pulse_Rifle_Front_panel Front_panel1 Screws Left_screw
+    400008: Pulse_Rifle_Front_panel Front_panel1 Screws Right_screw
+    400010: Pulse_Rifle_MAIN Grip_1
+    400012: Pulse_Rifle_MAIN Main_Chape
+    400014: Pulse_Rifle_Recoil Down_recoil
+    400016: Pulse_Rifle_Recoil Upper_recoil
+    400018: Pulse_Rifle_Stracks Back_strack
+    400020: Pulse_Rifle_Stracks Front_strack
+    400022: Pulse_Rifle_Underrail Under_rail
+    2300000: Pulse_Rifle_Back_rail Back_railing
+    2300002: Pulse_Rifle_Front_panel Front_panel1
+    2300004: Pulse_Rifle_Front_panel Front_panel1 Screws Left_screw
+    2300006: Pulse_Rifle_Front_panel Front_panel1 Screws Right_screw
+    2300008: Pulse_Rifle_MAIN Grip_1
+    2300010: Pulse_Rifle_MAIN Main_Chape
+    2300012: Pulse_Rifle_Recoil Down_recoil
+    2300014: Pulse_Rifle_Recoil Upper_recoil
+    2300016: Pulse_Rifle_Stracks Back_strack
+    2300018: Pulse_Rifle_Stracks Front_strack
+    2300020: Pulse_Rifle_Underrail Under_rail
+    3300000: Pulse_Rifle_Back_rail Back_railing
+    3300002: Pulse_Rifle_Front_panel Front_panel1
+    3300004: Pulse_Rifle_Front_panel Front_panel1 Screws Left_screw
+    3300006: Pulse_Rifle_Front_panel Front_panel1 Screws Right_screw
+    3300008: Pulse_Rifle_MAIN Grip_1
+    3300010: Pulse_Rifle_MAIN Main_Chape
+    3300012: Pulse_Rifle_Recoil Down_recoil
+    3300014: Pulse_Rifle_Recoil Upper_recoil
+    3300016: Pulse_Rifle_Stracks Back_strack
+    3300018: Pulse_Rifle_Stracks Front_strack
+    3300020: Pulse_Rifle_Underrail Under_rail
+    4300000: Pulse_Rifle_Back_rail Back_railing
+    4300002: Pulse_Rifle_Front_panel Front_panel1
+    4300004: Pulse_Rifle_Front_panel Front_panel1 Screws Left_screw
+    4300006: Pulse_Rifle_Front_panel Front_panel1 Screws Right_screw
+    4300008: Pulse_Rifle_MAIN Grip_1
+    4300010: Pulse_Rifle_MAIN Main_Chape
+    4300012: Pulse_Rifle_Recoil Down_recoil
+    4300014: Pulse_Rifle_Recoil Upper_recoil
+    4300016: Pulse_Rifle_Stracks Back_strack
+    4300018: Pulse_Rifle_Stracks Front_strack
+    4300020: Pulse_Rifle_Underrail Under_rail
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 9.99999975e-05
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 0
+  userData: 
