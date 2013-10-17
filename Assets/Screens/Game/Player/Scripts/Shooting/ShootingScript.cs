@@ -11,6 +11,7 @@ public class ShootingScript : MonoBehaviour {
 	private GameObject gun;
 	private float downTime = 0.09f;
 	private bool countDown = false;
+	public float shootDistance = 150.0f;
 	// Use this for initialization
 	void Start () {
 		gun = GameObject.Find("Puls");
@@ -35,7 +36,7 @@ public class ShootingScript : MonoBehaviour {
 		Vector3 fwd = transform.TransformDirection(gun.transform.forward);
 		Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width*0.5f,Screen.height*0.5f,0));
 		
-		if (Physics.Raycast(ray,out hit, 100)) {
+		if (Physics.Raycast(ray,out hit, shootDistance)) {
 			Debug.Log(hit.collider.gameObject.name);
 			Debug.DrawLine(gun.transform.position,hit.point);
 			
