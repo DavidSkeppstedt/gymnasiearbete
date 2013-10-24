@@ -33,12 +33,14 @@ public class ShootingScript : MonoBehaviour {
 		
 		
 		RaycastHit hit;
+		if (gun != null){
+			
 		Vector3 fwd = transform.TransformDirection(gun.transform.forward);
 		Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width*0.5f,Screen.height*0.5f,0));
 		
 		if (Physics.Raycast(ray,out hit, shootDistance)) {
 			Debug.Log(hit.collider.gameObject.name);
-			Debug.DrawLine(gun.transform.position,hit.point);
+			//Debug.DrawLine(gun.transform.position,hit.point);
 			
 		
 			if (Input.GetButtonDown("Fire1")) {
@@ -82,8 +84,8 @@ public class ShootingScript : MonoBehaviour {
 		
 		
 		
-	
 	}
+}
 	
 	// Here we check what is shot
 	private void shoot(Collider collider,Vector3 hit) {
