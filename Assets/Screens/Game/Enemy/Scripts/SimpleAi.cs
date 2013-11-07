@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-[RequireComponent (typeof (CharacterController))]
 public class SimpleAi : MonoBehaviour {
 	
 	
@@ -14,8 +13,9 @@ public class SimpleAi : MonoBehaviour {
 	private bool shouldShoot = false;
 	private bool canSee = false;
 	private bool shouldRun = false;
-	
-	
+	private bool shouldPatroll = false;
+	private bool stopMe = false;
+	private int p = 3;
 	
 	
 	private CharacterController cc;
@@ -27,10 +27,10 @@ public class SimpleAi : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		distanceToPlayer = 0;
-		lookDistance = 100;
-		attackRange = 50;
+		lookDistance = 80;
+		attackRange = 30;
 		dampning = 6.0f;
-		runDistance = 30.0f;
+		runDistance = 20.0f;
 		moveSpeed = 23.0f;
 		cc = GetComponent<CharacterController>();
 	
@@ -39,51 +39,57 @@ public class SimpleAi : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		
-		
-		
-		
-		
-		distanceToPlayer = Vector3.Distance(target.position,transform.position);
-		
+	
+		//Distances till spelaren.
+		distanceToPlayer = Vector3.Distance(target.position,transform.position);	
 		
 		Vector3 fwd = transform.TransformDirection(Vector3.forward);
 		RaycastHit hit;
         if (Physics.Raycast(transform.position, fwd,out hit, 100)){
-            print("There is: " + hit.collider.gameObject.name);
+            
         	Debug.DrawLine(cc.transform.position,hit.point);
 			if (hit.collider.gameObject.name == "level") {
 				canSee =false;
 			}
 			
-    	}else {
+		}else {
+			
 			canSee = true;
-			
 		}
 		
-		
-		Debug.Log(distanceToPlayer);
-		if (distanceToPlayer < lookDistance) {
-			
-			//move towrads player.
-			lookAt();
-			moveTo();
-			shouldShoot = false;
-			
-		}
-		
+		//Debug.Log("Distance:" + distanceToPlayer +" Can See:" +canSee + " Should Shoot:" + shouldShoot + " Should Run:" + shouldRun + " Should Patroll:" + shouldPatroll);
+	
+		//Ser inte spelaren och patrulerar
 		if (distanceToPlayer > lookDistance) {
 			//Patroll!
 			renderer.material.color = Color.white;
-			shouldShoot = false;
+			
+		
+			patroll();
 		}
 		
+		
+		//Ser spelaren
+		if (distanceToPlayer < lookDistance) {
+			shouldShoot = false;
+			//move towrads player.
+			lookAt();
+			moveTo();
+			
+			
+		}
+		
+		
+		
+		//Om den ser spelaren och ska attackera
 		if (distanceToPlayer < attackRange) {
 				//attack the player.
 				
 				shouldShoot = true;
+				attack ();
 		}
 		
+		//Om spelaren är för nära och ska backa.
 		if (distanceToPlayer < runDistance) {
 			shouldRun = true;
 		}else {
@@ -96,46 +102,74 @@ public class SimpleAi : MonoBehaviour {
 
 
 	void lookAt() {
-		var rotation = Quaternion.LookRotation(target.position - transform.position);
-		transform.rotation = Quaternion.Slerp(transform.rotation,rotation,Time.deltaTime*dampning);
-		renderer.material.color = Color.red;
 		
-		
-		
+			var rotation = Quaternion.LookRotation(target.position - transform.position);
+			transform.rotation = Quaternion.Slerp(transform.rotation,rotation,Time.deltaTime*dampning);
+			renderer.material.color = Color.red;		
+			shouldPatroll = false;
+
 	}
 	
 	void moveTo() {
-		if (!shouldShoot && canSee){
+		//Debug.Break();
+		
+		if (!shouldShoot){
 			renderer.material.color = Color.yellow;
-			
-			//transform.Translate(Vector3.forward*moveSpeed*Time.deltaTime);
 			moveDirection = transform.forward;
 			moveDirection *=moveSpeed*2;
-		}else {
+			
+			Debug.Log("Here");
+			
+		}
+		
+		if (stopMe) {
 			moveDirection.x = 0;
 			moveDirection.z = 0;
+			Debug.Log("not here either");
+			//Debug.Break();
+			
 		}
+		
+	
+		
+		
 		
 		if (shouldRun) {
 			moveDirection = -transform.forward;
 			moveDirection *=moveSpeed;
 		}
-		
 			moveDirection.y -= gravity * Time.deltaTime;	
 			cc.Move(moveDirection*Time.deltaTime);
 			
-		
+
 	}
 	
 	
 	void attack () {
 		if (shouldShoot) {
 			//Shoot here!
-			
-			
+			stopMe= true;
+			renderer.material.color = Color.blue;
+		}else {
+			//stopMe = false;
 		}
 		
 		
+	}
+	
+	void patroll() {
+		shouldPatroll = true;
+		moveDirection.y -= gravity*Time.deltaTime;	
+		moveDirection.x = p;
+		cc.Move(moveDirection*Time.deltaTime);
+		
+	}
+	
+	
+	void OnControllerColliderHit (ControllerColliderHit hit) { 
+    	 if (hit.normal.y < 0.707){
+			p *=-1;
+  		}
 	}
 	
 	
