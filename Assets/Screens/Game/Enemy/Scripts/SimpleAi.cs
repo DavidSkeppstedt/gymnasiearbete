@@ -39,26 +39,40 @@ public class SimpleAi : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-	
-		//Distances till spelaren.
-		distanceToPlayer = Vector3.Distance(target.position,transform.position);	
+		Vector3 test = target.position;
+		test = new Vector3(test.x,test.y,test.z);
 		
-		Vector3 fwd = transform.TransformDirection(Vector3.forward);
+		//Debug.Log(shouldShoot);
+		
+		lookAt();
+		//Distances till spelaren.
+		distanceToPlayer = Vector3.Distance(test,transform.position);	
+		
+		//Vector3 fwd = transform.TransformDirection(Vector3.forward);
 		RaycastHit hit;
-        if (Physics.Raycast(transform.position, fwd,out hit, 100)){
-            
-        	Debug.DrawLine(cc.transform.position,hit.point);
-			if (hit.collider.gameObject.name == "level") {
-				canSee =false;
+		
+		Debug.Log(target.position);
+		
+		Vector3 direction = (target.position-transform.position).normalized;
+		
+		
+		
+        if (Physics.Raycast(transform.position,direction,out hit, 150)){
+            Debug.Log(hit.collider.name);
+        	
+			Debug.DrawLine(transform.position,hit.transform.position);
+			
+			if (hit.collider.gameObject.name == "PlayerObject") {
+				canSee =true;
+			}else {
+				canSee = false;
 			}
 			
-		}else {
 			
-			canSee = true;
 		}
 		
-		//Debug.Log("Distance:" + distanceToPlayer +" Can See:" +canSee + " Should Shoot:" + shouldShoot + " Should Run:" + shouldRun + " Should Patroll:" + shouldPatroll);
-	
+		//Debug.Log("Distance:" + distanceToPlayer); /*/+" Can See:" +canSee + " Should Shoot:" + shouldShoot + " Should Run:" + shouldRun + " Should Patroll:" + shouldPatroll);
+	//*/
 		//Ser inte spelaren och patrulerar
 		if (distanceToPlayer > lookDistance) {
 			//Patroll!
@@ -71,10 +85,13 @@ public class SimpleAi : MonoBehaviour {
 		
 		//Ser spelaren
 		if (distanceToPlayer < lookDistance) {
-			shouldShoot = false;
+			//shouldShoot = false;
 			//move towrads player.
-			lookAt();
+			
 			moveTo();
+			if (!canSee) {
+				patroll();
+			}
 			
 			
 		}
@@ -87,6 +104,8 @@ public class SimpleAi : MonoBehaviour {
 				
 				shouldShoot = true;
 				attack ();
+		}else {
+			shouldShoot = false;
 		}
 		
 		//Om spelaren är för nära och ska backa.
@@ -102,30 +121,30 @@ public class SimpleAi : MonoBehaviour {
 
 
 	void lookAt() {
-		
-			var rotation = Quaternion.LookRotation(target.position - transform.position);
-			transform.rotation = Quaternion.Slerp(transform.rotation,rotation,Time.deltaTime*dampning);
-			renderer.material.color = Color.red;		
-			shouldPatroll = false;
-
+			
+				var rotation = Quaternion.LookRotation(target.position - transform.position);
+				transform.rotation = Quaternion.Slerp(transform.rotation,rotation,Time.deltaTime*dampning);
+				renderer.material.color = Color.red;		
+				shouldPatroll = false;
+			
 	}
 	
 	void moveTo() {
 		//Debug.Break();
 		
-		if (!shouldShoot){
+		if (!shouldShoot && canSee){
 			renderer.material.color = Color.yellow;
 			moveDirection = transform.forward;
 			moveDirection *=moveSpeed*2;
 			
-			Debug.Log("Here");
+			Debug.Log("Not Shooting");
 			
 		}
 		
-		if (stopMe) {
+		if (shouldShoot) {
 			moveDirection.x = 0;
 			moveDirection.z = 0;
-			Debug.Log("not here either");
+			Debug.Log("Shooting");
 			//Debug.Break();
 			
 		}
@@ -135,7 +154,7 @@ public class SimpleAi : MonoBehaviour {
 		
 		
 		if (shouldRun) {
-			moveDirection = -transform.forward;
+			moveDirection = target.transform.forward;
 			moveDirection *=moveSpeed;
 		}
 			moveDirection.y -= gravity * Time.deltaTime;	
