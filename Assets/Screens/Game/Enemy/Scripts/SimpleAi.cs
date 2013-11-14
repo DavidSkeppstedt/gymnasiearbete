@@ -2,7 +2,7 @@
 using System.Collections;
 public class SimpleAi : MonoBehaviour {
 	
-	
+	public float health = 100.0f;
 	private float distanceToPlayer;
 	public Transform target;
 	private float lookDistance;
@@ -36,6 +36,19 @@ public class SimpleAi : MonoBehaviour {
 	
 	}
 	
+	
+	void takeHit() {
+		
+		if (health >= 0) {
+			health -=25;
+		}else {
+			Destroy(transform.gameObject);
+		}
+		
+		
+	}
+	
+	
 	// Update is called once per frame
 	void Update () {
 		
@@ -51,14 +64,14 @@ public class SimpleAi : MonoBehaviour {
 		//Vector3 fwd = transform.TransformDirection(Vector3.forward);
 		RaycastHit hit;
 		
-		Debug.Log(target.position);
+		//Debug.Log(target.position);
 		
 		Vector3 direction = (target.position-transform.position).normalized;
 		
 		
 		
         if (Physics.Raycast(transform.position,direction,out hit, 150)){
-            Debug.Log(hit.collider.name);
+            //Debug.Log(hit.collider.name);
         	
 			Debug.DrawLine(transform.position,hit.transform.position);
 			

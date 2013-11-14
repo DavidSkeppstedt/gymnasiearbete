@@ -93,10 +93,15 @@ public class ShootingScript : MonoBehaviour {
 		
 			if (collider.name == "Cube") {
 				pulseGun(hit,collider);	
-				
-				
-				
-			}	
+			
+			}
+		
+			if (collider.name == "Enemy") {
+				collider.SendMessage("takeHit");
+			}
+		
+		
+		
 	}
 	
 	

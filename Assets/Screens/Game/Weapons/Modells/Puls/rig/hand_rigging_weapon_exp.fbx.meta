@@ -1,0 +1,766 @@
+fileFormatVersion: 2
+guid: 7063c41ab03f1cb4d8798c63b754150d
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: Camera
+    100002: Controls
+    100004: Controls_2
+    100006: Cylinder005
+    100008: Cylinder005_2
+    100010: Elbow
+    100012: Elbow_2
+    100014: Elbow_Pole
+    100016: Elbow_Pole_2
+    100018: Fore_1
+    100020: Fore_1_2
+    100022: Fore_1_Goal
+    100024: Fore_1_Goal_2
+    100026: Fore_1_Pole
+    100028: Fore_1_Pole_2
+    100030: Fore_2
+    100032: Fore_2_2
+    100034: Fore_2_Goal
+    100036: Fore_2_Goal_2
+    100038: Fore_2_Pole
+    100040: Fore_2_Pole_2
+    100042: Fore_3
+    100044: Fore_3_2
+    100046: Fore_3_Goal
+    100048: Fore_3_Goal_2
+    100050: Fore_3_Pole
+    100052: Fore_3_Pole_2
+    100054: Fore_4
+    100056: Fore_4_2
+    100058: Fore_4_Goal
+    100060: Fore_4_Goal_2
+    100062: Hand
+    100064: Hand_1
+    100066: //RootNode
+    100068: Light
+    100070: Little_1
+    100072: Little_1_2
+    100074: Little_1_Goal
+    100076: Little_1_Goal_2
+    100078: Little_1_Pole
+    100080: Little_1_Pole_2
+    100082: Little_2
+    100084: Little_2_2
+    100086: Little_2_Goal
+    100088: Little_2_Goal_2
+    100090: Little_2_Pole
+    100092: Little_2_Pole_2
+    100094: Little_3
+    100096: Little_3_2
+    100098: Little_3_Goal
+    100100: Little_3_Goal_2
+    100102: Little_3_Pole
+    100104: Little_3_Pole_2
+    100106: Little_4
+    100108: Little_4_2
+    100110: Little_4_Goal
+    100112: Little_4_Goal_2
+    100114: Middle_1
+    100116: Middle_1_2
+    100118: Middle_1_Goal
+    100120: Middle_1_Goal_2
+    100122: Middle_1_Pole
+    100124: Middle_1_Pole_2
+    100126: Middle_2
+    100128: Middle_2_2
+    100130: Middle_2_Goal
+    100132: Middle_2_Goal_2
+    100134: Middle_2_Pole
+    100136: Middle_2_Pole_2
+    100138: Middle_3
+    100140: Middle_3_2
+    100142: Middle_3_Goal
+    100144: Middle_3_Goal_2
+    100146: Middle_3_Pole
+    100148: Middle_3_Pole_2
+    100150: Middle_4
+    100152: Middle_4_2
+    100154: Middle_4_Goal
+    100156: Middle_4_Goal_2
+    100158: Null
+    100160: Poles
+    100162: Poles_2
+    100164: Pulse_Rifle
+    100166: Ring_1
+    100168: Ring_1_2
+    100170: Ring_1_Goal
+    100172: Ring_1_Goal_2
+    100174: Ring_1_Pole
+    100176: Ring_1_Pole_2
+    100178: Ring_2
+    100180: Ring_2_2
+    100182: Ring_2_Goal
+    100184: Ring_2_Goal_2
+    100186: Ring_2_Pole
+    100188: Ring_2_Pole_2
+    100190: Ring_3
+    100192: Ring_3_2
+    100194: Ring_3_Goal
+    100196: Ring_3_Goal_2
+    100198: Ring_3_Pole
+    100200: Ring_3_Pole_2
+    100202: Ring_4
+    100204: Ring_4_2
+    100206: Ring_4_Goal
+    100208: Ring_4_Goal_2
+    100210: Root
+    100212: Root_2
+    100214: Skin
+    100216: Skin_2
+    100218: Thumb_1
+    100220: Thumb_1_2
+    100222: Thumb_1_Goal
+    100224: Thumb_1_Goal_2
+    100226: Thumb_1_Pole
+    100228: Thumb_1_Pole_2
+    100230: Thumb_2
+    100232: Thumb_2_2
+    100234: Thumb_2_Goal
+    100236: Thumb_2_Goal_2
+    100238: Thumb_2_Pole
+    100240: Thumb_2_Pole_2
+    100242: Thumb_3
+    100244: Thumb_3_2
+    100246: Thumb_3_Goal
+    100248: Thumb_3_Goal_2
+    100250: Wrist
+    100252: Wrist_2
+    100254: Wrist_Goal
+    100256: Wrist_Goal_2
+    100258: Wrist_Pole
+    100260: Wrist_Pole_2
+    400000: Camera
+    400002: Controls
+    400004: Controls_2
+    400006: Cylinder005
+    400008: Cylinder005_2
+    400010: Elbow
+    400012: Elbow_2
+    400014: Elbow_Pole
+    400016: Elbow_Pole_2
+    400018: Fore_1
+    400020: Fore_1_2
+    400022: Fore_1_Goal
+    400024: Fore_1_Goal_2
+    400026: Fore_1_Pole
+    400028: Fore_1_Pole_2
+    400030: Fore_2
+    400032: Fore_2_2
+    400034: Fore_2_Goal
+    400036: Fore_2_Goal_2
+    400038: Fore_2_Pole
+    400040: Fore_2_Pole_2
+    400042: Fore_3
+    400044: Fore_3_2
+    400046: Fore_3_Goal
+    400048: Fore_3_Goal_2
+    400050: Fore_3_Pole
+    400052: Fore_3_Pole_2
+    400054: Fore_4
+    400056: Fore_4_2
+    400058: Fore_4_Goal
+    400060: Fore_4_Goal_2
+    400062: Hand
+    400064: Hand_1
+    400066: //RootNode
+    400068: Light
+    400070: Little_1
+    400072: Little_1_2
+    400074: Little_1_Goal
+    400076: Little_1_Goal_2
+    400078: Little_1_Pole
+    400080: Little_1_Pole_2
+    400082: Little_2
+    400084: Little_2_2
+    400086: Little_2_Goal
+    400088: Little_2_Goal_2
+    400090: Little_2_Pole
+    400092: Little_2_Pole_2
+    400094: Little_3
+    400096: Little_3_2
+    400098: Little_3_Goal
+    400100: Little_3_Goal_2
+    400102: Little_3_Pole
+    400104: Little_3_Pole_2
+    400106: Little_4
+    400108: Little_4_2
+    400110: Little_4_Goal
+    400112: Little_4_Goal_2
+    400114: Middle_1
+    400116: Middle_1_2
+    400118: Middle_1_Goal
+    400120: Middle_1_Goal_2
+    400122: Middle_1_Pole
+    400124: Middle_1_Pole_2
+    400126: Middle_2
+    400128: Middle_2_2
+    400130: Middle_2_Goal
+    400132: Middle_2_Goal_2
+    400134: Middle_2_Pole
+    400136: Middle_2_Pole_2
+    400138: Middle_3
+    400140: Middle_3_2
+    400142: Middle_3_Goal
+    400144: Middle_3_Goal_2
+    400146: Middle_3_Pole
+    400148: Middle_3_Pole_2
+    400150: Middle_4
+    400152: Middle_4_2
+    400154: Middle_4_Goal
+    400156: Middle_4_Goal_2
+    400158: Null
+    400160: Poles
+    400162: Poles_2
+    400164: Pulse_Rifle
+    400166: Ring_1
+    400168: Ring_1_2
+    400170: Ring_1_Goal
+    400172: Ring_1_Goal_2
+    400174: Ring_1_Pole
+    400176: Ring_1_Pole_2
+    400178: Ring_2
+    400180: Ring_2_2
+    400182: Ring_2_Goal
+    400184: Ring_2_Goal_2
+    400186: Ring_2_Pole
+    400188: Ring_2_Pole_2
+    400190: Ring_3
+    400192: Ring_3_2
+    400194: Ring_3_Goal
+    400196: Ring_3_Goal_2
+    400198: Ring_3_Pole
+    400200: Ring_3_Pole_2
+    400202: Ring_4
+    400204: Ring_4_2
+    400206: Ring_4_Goal
+    400208: Ring_4_Goal_2
+    400210: Root
+    400212: Root_2
+    400214: Skin
+    400216: Skin_2
+    400218: Thumb_1
+    400220: Thumb_1_2
+    400222: Thumb_1_Goal
+    400224: Thumb_1_Goal_2
+    400226: Thumb_1_Pole
+    400228: Thumb_1_Pole_2
+    400230: Thumb_2
+    400232: Thumb_2_2
+    400234: Thumb_2_Goal
+    400236: Thumb_2_Goal_2
+    400238: Thumb_2_Pole
+    400240: Thumb_2_Pole_2
+    400242: Thumb_3
+    400244: Thumb_3_2
+    400246: Thumb_3_Goal
+    400248: Thumb_3_Goal_2
+    400250: Wrist
+    400252: Wrist_2
+    400254: Wrist_Goal
+    400256: Wrist_Goal_2
+    400258: Wrist_Pole
+    400260: Wrist_Pole_2
+    2300000: Pulse_Rifle
+    3300000: Pulse_Rifle
+    4300000: Cylinder005
+    4300002: Pulse_Rifle
+    4300004: Cylinder005_2
+    7400000: Idle
+    7400002: Fire
+    7400004: Start sprinting
+    7400006: Sprinting
+    7400008: Ending of sprinting
+    7400010: Zoom
+    7400012: ShotZoome
+    7400014: Zomming out
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: Cylinder005
+    13700002: Cylinder005_2
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations:
+    - name: Idle
+      takeName: C4D Animation Take
+      firstFrame: 0
+      lastFrame: 100
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Camera
+        weight: 0
+      - path: Light
+        weight: 0
+      - path: Null
+        weight: 1
+      - path: Null/Hand_1
+        weight: 1
+      - path: Null/Hand_1/Controls_2
+        weight: 1
+      - path: Null/Hand_1/Controls_2/Wrist_Goal_2
+        weight: 1
+      - path: Null/Hand_1/Controls_2/Wrist_Goal_2/Fore_1_Goal_2
+        weight: 1
+      - path: Null/Hand_1/Controls_2/Wrist_Goal_2/Fore_1_Goal_2/Fore_2_Goal_2
+        weight: 1
+      - path: Null/Hand_1/Controls_2/Wrist_Goal_2/Fore_1_Goal_2/Fore_2_Goal_2/Fore_3_Goal_2
+        weight: 1
+      - path: Null/Hand_1/Controls_2/Wrist_Goal_2/Fore_1_Goal_2/Fore_2_Goal_2/Fore_3_Goal_2/Fore_4_Goal_2
+        weight: 1
+      - path: Null/Hand_1/Controls_2/Wrist_Goal_2/Little_1_Goal_2
+        weight: 1
+      - path: Null/Hand_1/Controls_2/Wrist_Goal_2/Little_1_Goal_2/Little_2_Goal_2
+        weight: 1
+      - path: Null/Hand_1/Controls_2/Wrist_Goal_2/Little_1_Goal_2/Little_2_Goal_2/Little_3_Goal_2
+        weight: 1
+      - path: Null/Hand_1/Controls_2/Wrist_Goal_2/Little_1_Goal_2/Little_2_Goal_2/Little_3_Goal_2/Little_4_Goal_2
+        weight: 1
+      - path: Null/Hand_1/Controls_2/Wrist_Goal_2/Middle_1_Goal_2
+        weight: 1
+      - path: Null/Hand_1/Controls_2/Wrist_Goal_2/Middle_1_Goal_2/Middle_2_Goal_2
+        weight: 1
+      - path: Null/Hand_1/Controls_2/Wrist_Goal_2/Middle_1_Goal_2/Middle_2_Goal_2/Middle_3_Goal_2
+        weight: 1
+      - path: Null/Hand_1/Controls_2/Wrist_Goal_2/Middle_1_Goal_2/Middle_2_Goal_2/Middle_3_Goal_2/Middle_4_Goal_2
+        weight: 1
+      - path: Null/Hand_1/Controls_2/Wrist_Goal_2/Ring_1_Goal_2
+        weight: 1
+      - path: Null/Hand_1/Controls_2/Wrist_Goal_2/Ring_1_Goal_2/Ring_2_Goal_2
+        weight: 1
+      - path: Null/Hand_1/Controls_2/Wrist_Goal_2/Ring_1_Goal_2/Ring_2_Goal_2/Ring_3_Goal_2
+        weight: 1
+      - path: Null/Hand_1/Controls_2/Wrist_Goal_2/Ring_1_Goal_2/Ring_2_Goal_2/Ring_3_Goal_2/Ring_4_Goal_2
+        weight: 1
+      - path: Null/Hand_1/Controls_2/Wrist_Goal_2/Thumb_1_Goal_2
+        weight: 1
+      - path: Null/Hand_1/Controls_2/Wrist_Goal_2/Thumb_1_Goal_2/Thumb_2_Goal_2
+        weight: 1
+      - path: Null/Hand_1/Controls_2/Wrist_Goal_2/Thumb_1_Goal_2/Thumb_2_Goal_2/Thumb_3_Goal_2
+        weight: 1
+      - path: Null/Hand_1/Cylinder005_2
+        weight: 1
+      - path: Null/Hand_1/Cylinder005_2/Skin_2
+        weight: 1
+      - path: Null/Hand_1/Hand
+        weight: 1
+      - path: Null/Hand_1/Hand/Controls
+        weight: 1
+      - path: Null/Hand_1/Hand/Controls/Wrist_Goal
+        weight: 1
+      - path: Null/Hand_1/Hand/Controls/Wrist_Goal/Fore_1_Goal
+        weight: 1
+      - path: Null/Hand_1/Hand/Controls/Wrist_Goal/Fore_1_Goal/Fore_2_Goal
+        weight: 1
+      - path: Null/Hand_1/Hand/Controls/Wrist_Goal/Fore_1_Goal/Fore_2_Goal/Fore_3_Goal
+        weight: 1
+      - path: Null/Hand_1/Hand/Controls/Wrist_Goal/Fore_1_Goal/Fore_2_Goal/Fore_3_Goal/Fore_4_Goal
+        weight: 1
+      - path: Null/Hand_1/Hand/Controls/Wrist_Goal/Little_1_Goal
+        weight: 1
+      - path: Null/Hand_1/Hand/Controls/Wrist_Goal/Little_1_Goal/Little_2_Goal
+        weight: 1
+      - path: Null/Hand_1/Hand/Controls/Wrist_Goal/Little_1_Goal/Little_2_Goal/Little_3_Goal
+        weight: 1
+      - path: Null/Hand_1/Hand/Controls/Wrist_Goal/Little_1_Goal/Little_2_Goal/Little_3_Goal/Little_4_Goal
+        weight: 1
+      - path: Null/Hand_1/Hand/Controls/Wrist_Goal/Middle_1_Goal
+        weight: 1
+      - path: Null/Hand_1/Hand/Controls/Wrist_Goal/Middle_1_Goal/Middle_2_Goal
+        weight: 1
+      - path: Null/Hand_1/Hand/Controls/Wrist_Goal/Middle_1_Goal/Middle_2_Goal/Middle_3_Goal
+        weight: 1
+      - path: Null/Hand_1/Hand/Controls/Wrist_Goal/Middle_1_Goal/Middle_2_Goal/Middle_3_Goal/Middle_4_Goal
+        weight: 1
+      - path: Null/Hand_1/Hand/Controls/Wrist_Goal/Ring_1_Goal
+        weight: 1
+      - path: Null/Hand_1/Hand/Controls/Wrist_Goal/Ring_1_Goal/Ring_2_Goal
+        weight: 1
+      - path: Null/Hand_1/Hand/Controls/Wrist_Goal/Ring_1_Goal/Ring_2_Goal/Ring_3_Goal
+        weight: 1
+      - path: Null/Hand_1/Hand/Controls/Wrist_Goal/Ring_1_Goal/Ring_2_Goal/Ring_3_Goal/Ring_4_Goal
+        weight: 1
+      - path: Null/Hand_1/Hand/Controls/Wrist_Goal/Thumb_1_Goal
+        weight: 1
+      - path: Null/Hand_1/Hand/Controls/Wrist_Goal/Thumb_1_Goal/Thumb_2_Goal
+        weight: 1
+      - path: Null/Hand_1/Hand/Controls/Wrist_Goal/Thumb_1_Goal/Thumb_2_Goal/Thumb_3_Goal
+        weight: 1
+      - path: Null/Hand_1/Hand/Cylinder005
+        weight: 1
+      - path: Null/Hand_1/Hand/Cylinder005/Skin
+        weight: 1
+      - path: Null/Hand_1/Hand/Poles
+        weight: 1
+      - path: Null/Hand_1/Hand/Poles/Elbow_Pole
+        weight: 1
+      - path: Null/Hand_1/Hand/Poles/Fore_1_Pole
+        weight: 1
+      - path: Null/Hand_1/Hand/Poles/Fore_2_Pole
+        weight: 1
+      - path: Null/Hand_1/Hand/Poles/Fore_3_Pole
+        weight: 1
+      - path: Null/Hand_1/Hand/Poles/Little_1_Pole
+        weight: 1
+      - path: Null/Hand_1/Hand/Poles/Little_2_Pole
+        weight: 1
+      - path: Null/Hand_1/Hand/Poles/Little_3_Pole
+        weight: 1
+      - path: Null/Hand_1/Hand/Poles/Middle_1_Pole
+        weight: 1
+      - path: Null/Hand_1/Hand/Poles/Middle_2_Pole
+        weight: 1
+      - path: Null/Hand_1/Hand/Poles/Middle_3_Pole
+        weight: 1
+      - path: Null/Hand_1/Hand/Poles/Ring_1_Pole
+        weight: 1
+      - path: Null/Hand_1/Hand/Poles/Ring_2_Pole
+        weight: 1
+      - path: Null/Hand_1/Hand/Poles/Ring_3_Pole
+        weight: 1
+      - path: Null/Hand_1/Hand/Poles/Thumb_1_Pole
+        weight: 1
+      - path: Null/Hand_1/Hand/Poles/Thumb_2_Pole
+        weight: 1
+      - path: Null/Hand_1/Hand/Poles/Wrist_Pole
+        weight: 1
+      - path: Null/Hand_1/Hand/Root
+        weight: 1
+      - path: Null/Hand_1/Hand/Root/Elbow
+        weight: 1
+      - path: Null/Hand_1/Hand/Root/Elbow/Wrist
+        weight: 1
+      - path: Null/Hand_1/Hand/Root/Elbow/Wrist/Fore_1
+        weight: 1
+      - path: Null/Hand_1/Hand/Root/Elbow/Wrist/Fore_1/Fore_2
+        weight: 1
+      - path: Null/Hand_1/Hand/Root/Elbow/Wrist/Fore_1/Fore_2/Fore_3
+        weight: 1
+      - path: Null/Hand_1/Hand/Root/Elbow/Wrist/Fore_1/Fore_2/Fore_3/Fore_4
+        weight: 1
+      - path: Null/Hand_1/Hand/Root/Elbow/Wrist/Little_1
+        weight: 1
+      - path: Null/Hand_1/Hand/Root/Elbow/Wrist/Little_1/Little_2
+        weight: 1
+      - path: Null/Hand_1/Hand/Root/Elbow/Wrist/Little_1/Little_2/Little_3
+        weight: 1
+      - path: Null/Hand_1/Hand/Root/Elbow/Wrist/Little_1/Little_2/Little_3/Little_4
+        weight: 1
+      - path: Null/Hand_1/Hand/Root/Elbow/Wrist/Middle_1
+        weight: 1
+      - path: Null/Hand_1/Hand/Root/Elbow/Wrist/Middle_1/Middle_2
+        weight: 1
+      - path: Null/Hand_1/Hand/Root/Elbow/Wrist/Middle_1/Middle_2/Middle_3
+        weight: 1
+      - path: Null/Hand_1/Hand/Root/Elbow/Wrist/Middle_1/Middle_2/Middle_3/Middle_4
+        weight: 1
+      - path: Null/Hand_1/Hand/Root/Elbow/Wrist/Ring_1
+        weight: 1
+      - path: Null/Hand_1/Hand/Root/Elbow/Wrist/Ring_1/Ring_2
+        weight: 1
+      - path: Null/Hand_1/Hand/Root/Elbow/Wrist/Ring_1/Ring_2/Ring_3
+        weight: 1
+      - path: Null/Hand_1/Hand/Root/Elbow/Wrist/Ring_1/Ring_2/Ring_3/Ring_4
+        weight: 1
+      - path: Null/Hand_1/Hand/Root/Elbow/Wrist/Thumb_1
+        weight: 1
+      - path: Null/Hand_1/Hand/Root/Elbow/Wrist/Thumb_1/Thumb_2
+        weight: 1
+      - path: Null/Hand_1/Hand/Root/Elbow/Wrist/Thumb_1/Thumb_2/Thumb_3
+        weight: 1
+      - path: Null/Hand_1/Poles_2
+        weight: 1
+      - path: Null/Hand_1/Poles_2/Elbow_Pole_2
+        weight: 1
+      - path: Null/Hand_1/Poles_2/Fore_1_Pole_2
+        weight: 1
+      - path: Null/Hand_1/Poles_2/Fore_2_Pole_2
+        weight: 1
+      - path: Null/Hand_1/Poles_2/Fore_3_Pole_2
+        weight: 1
+      - path: Null/Hand_1/Poles_2/Little_1_Pole_2
+        weight: 1
+      - path: Null/Hand_1/Poles_2/Little_2_Pole_2
+        weight: 1
+      - path: Null/Hand_1/Poles_2/Little_3_Pole_2
+        weight: 1
+      - path: Null/Hand_1/Poles_2/Middle_1_Pole_2
+        weight: 1
+      - path: Null/Hand_1/Poles_2/Middle_2_Pole_2
+        weight: 1
+      - path: Null/Hand_1/Poles_2/Middle_3_Pole_2
+        weight: 1
+      - path: Null/Hand_1/Poles_2/Ring_1_Pole_2
+        weight: 1
+      - path: Null/Hand_1/Poles_2/Ring_2_Pole_2
+        weight: 1
+      - path: Null/Hand_1/Poles_2/Ring_3_Pole_2
+        weight: 1
+      - path: Null/Hand_1/Poles_2/Thumb_1_Pole_2
+        weight: 1
+      - path: Null/Hand_1/Poles_2/Thumb_2_Pole_2
+        weight: 1
+      - path: Null/Hand_1/Poles_2/Wrist_Pole_2
+        weight: 1
+      - path: Null/Hand_1/Pulse_Rifle
+        weight: 1
+      - path: Null/Hand_1/Root_2
+        weight: 1
+      - path: Null/Hand_1/Root_2/Elbow_2
+        weight: 1
+      - path: Null/Hand_1/Root_2/Elbow_2/Wrist_2
+        weight: 1
+      - path: Null/Hand_1/Root_2/Elbow_2/Wrist_2/Fore_1_2
+        weight: 1
+      - path: Null/Hand_1/Root_2/Elbow_2/Wrist_2/Fore_1_2/Fore_2_2
+        weight: 1
+      - path: Null/Hand_1/Root_2/Elbow_2/Wrist_2/Fore_1_2/Fore_2_2/Fore_3_2
+        weight: 1
+      - path: Null/Hand_1/Root_2/Elbow_2/Wrist_2/Fore_1_2/Fore_2_2/Fore_3_2/Fore_4_2
+        weight: 1
+      - path: Null/Hand_1/Root_2/Elbow_2/Wrist_2/Little_1_2
+        weight: 1
+      - path: Null/Hand_1/Root_2/Elbow_2/Wrist_2/Little_1_2/Little_2_2
+        weight: 1
+      - path: Null/Hand_1/Root_2/Elbow_2/Wrist_2/Little_1_2/Little_2_2/Little_3_2
+        weight: 1
+      - path: Null/Hand_1/Root_2/Elbow_2/Wrist_2/Little_1_2/Little_2_2/Little_3_2/Little_4_2
+        weight: 1
+      - path: Null/Hand_1/Root_2/Elbow_2/Wrist_2/Middle_1_2
+        weight: 1
+      - path: Null/Hand_1/Root_2/Elbow_2/Wrist_2/Middle_1_2/Middle_2_2
+        weight: 1
+      - path: Null/Hand_1/Root_2/Elbow_2/Wrist_2/Middle_1_2/Middle_2_2/Middle_3_2
+        weight: 1
+      - path: Null/Hand_1/Root_2/Elbow_2/Wrist_2/Middle_1_2/Middle_2_2/Middle_3_2/Middle_4_2
+        weight: 1
+      - path: Null/Hand_1/Root_2/Elbow_2/Wrist_2/Ring_1_2
+        weight: 1
+      - path: Null/Hand_1/Root_2/Elbow_2/Wrist_2/Ring_1_2/Ring_2_2
+        weight: 1
+      - path: Null/Hand_1/Root_2/Elbow_2/Wrist_2/Ring_1_2/Ring_2_2/Ring_3_2
+        weight: 1
+      - path: Null/Hand_1/Root_2/Elbow_2/Wrist_2/Ring_1_2/Ring_2_2/Ring_3_2/Ring_4_2
+        weight: 1
+      - path: Null/Hand_1/Root_2/Elbow_2/Wrist_2/Thumb_1_2
+        weight: 1
+      - path: Null/Hand_1/Root_2/Elbow_2/Wrist_2/Thumb_1_2/Thumb_2_2
+        weight: 1
+      - path: Null/Hand_1/Root_2/Elbow_2/Wrist_2/Thumb_1_2/Thumb_2_2/Thumb_3_2
+        weight: 1
+    - name: Fire
+      takeName: C4D Animation Take
+      firstFrame: 110
+      lastFrame: 116
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    - name: Start sprinting
+      takeName: C4D Animation Take
+      firstFrame: 120
+      lastFrame: 125
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    - name: Sprinting
+      takeName: C4D Animation Take
+      firstFrame: 128
+      lastFrame: 151
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    - name: Ending of sprinting
+      takeName: C4D Animation Take
+      firstFrame: 155
+      lastFrame: 159
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    - name: Zoom
+      takeName: C4D Animation Take
+      firstFrame: 166
+      lastFrame: 173
+      wrapMode: 8
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    - name: ShotZoome
+      takeName: C4D Animation Take
+      firstFrame: 186
+      lastFrame: 193
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    - name: Zomming out
+      takeName: C4D Animation Take
+      firstFrame: 215
+      lastFrame: 226
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      transformMask: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 1
+  userData: 
