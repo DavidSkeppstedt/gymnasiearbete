@@ -16,7 +16,8 @@ public class SimpleAi : MonoBehaviour {
 	private bool shouldPatroll = false;
 	private bool stopMe = false;
 	private int p = 3;
-	
+	private bool canShoot = true;
+	private float timer = 1;
 	
 	private CharacterController cc;
 	private float gravity = 20;
@@ -28,9 +29,9 @@ public class SimpleAi : MonoBehaviour {
 	void Start () {
 		distanceToPlayer = 0;
 		lookDistance = 80;
-		attackRange = 30;
+		attackRange = 60;
 		dampning = 6.0f;
-		runDistance = 20.0f;
+		runDistance = 35.0f;
 		moveSpeed = 23.0f;
 		cc = GetComponent<CharacterController>();
 	
@@ -43,6 +44,7 @@ public class SimpleAi : MonoBehaviour {
 			health -=25;
 		}else {
 			Destroy(transform.gameObject);
+			HealthScript.killed +=1;
 		}
 		
 		
@@ -115,6 +117,7 @@ public class SimpleAi : MonoBehaviour {
 		if (distanceToPlayer < attackRange) {
 				//attack the player.
 				
+				
 				shouldShoot = true;
 				attack ();
 		}else {
@@ -178,10 +181,25 @@ public class SimpleAi : MonoBehaviour {
 	
 	
 	void attack () {
-		if (shouldShoot) {
-			//Shoot here!
-			stopMe= true;
-			renderer.material.color = Color.blue;
+		if (shouldShoot && canSee) {
+			if (canShoot) {
+				//Shoot here!
+				stopMe= true;
+				renderer.material.color = Color.blue;
+				target.gameObject.SendMessage("LoseHealth",10);
+				canShoot = false;
+				timer = 0.9f;
+			}else {
+				if (timer > 0) {
+					//Debug.Log(timer);
+					timer -= Time.deltaTime;
+					
+				}else {
+					canShoot = true;
+				}
+	
+			}
+			
 		}else {
 			//stopMe = false;
 		}

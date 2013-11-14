@@ -7,7 +7,7 @@ public class MovementScript : MonoBehaviour {
 	//Declare variabler
 	private CharacterController cc;
 	private Camera camera;
-	public float moveSpeed = 35f;
+	public float moveSpeed = 15f;
 	public float mouseSensitivty = 5f;
 	
 	
