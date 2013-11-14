@@ -4,7 +4,7 @@ using System.Collections;
 public class ShootingScript : MonoBehaviour {
 	
 	
-	
+	private GameObject door;
 	public AudioClip weaponSound;
 	public LineRenderer renderObj;
 	private bool canShoot = true;	
@@ -16,6 +16,7 @@ public class ShootingScript : MonoBehaviour {
 	void Start () {
 		gun = GameObject.Find("Puls");
 		Screen.lockCursor = true;
+		door = GameObject.Find("Level");
 	}
 	
 	
@@ -40,7 +41,7 @@ public class ShootingScript : MonoBehaviour {
 		
 		if (Physics.Raycast(ray,out hit, shootDistance)) {
 			Debug.Log(hit.collider.gameObject.name);
-			//Debug.DrawLine(gun.transform.position,hit.point);
+			Debug.DrawLine(gun.transform.position,hit.point);
 			
 		
 			if (Input.GetButtonDown("Fire1")) {
@@ -94,6 +95,9 @@ public class ShootingScript : MonoBehaviour {
 			if (collider.name == "Cube") {
 				pulseGun(hit,collider);	
 			
+			}
+			if (collider.name == "Sphere_1") {
+				door.SendMessage("OpenDoor");
 			}
 		
 			if (collider.name == "Enemy") {
