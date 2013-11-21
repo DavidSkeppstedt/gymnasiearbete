@@ -12,7 +12,7 @@ public class Anim : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate() {
 		if (Input.GetButton("Fire1")) {
 			
 			if (zoom) {

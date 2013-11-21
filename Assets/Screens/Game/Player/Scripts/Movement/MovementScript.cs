@@ -8,7 +8,7 @@ public class MovementScript : MonoBehaviour {
 	private CharacterController cc;
 	private Camera camera;
 	public float moveSpeed = 15f;
-	public float mouseSensitivty = 5f;
+	public float mouseSensitivty = 10f;
 	
 	
 	public float upDownRange = 60.0f;
@@ -44,10 +44,10 @@ public class MovementScript : MonoBehaviour {
 		
 	}
 	private void rotateHead() {
-		transform.Rotate(new Vector3(0,Input.GetAxis("Mouse X")*mouseSensitivty,0));
+		transform.Rotate(new Vector3(0,(Input.GetAxis("Mouse X")*mouseSensitivty)*Time.deltaTime,0));
 		
 		//Inverted because it will be interted otherwise :P
-		verticalRotation -=Input.GetAxis("Mouse Y") * mouseSensitivty;
+		verticalRotation -=(Input.GetAxis("Mouse Y") * mouseSensitivty)*Time.deltaTime;
 		verticalRotation  = Mathf.Clamp(verticalRotation,-upDownRange,upDownRange);
 		camera.transform.localRotation = Quaternion.Euler(verticalRotation,0,0);
 		

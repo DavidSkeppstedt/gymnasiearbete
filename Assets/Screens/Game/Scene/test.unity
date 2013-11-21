@@ -4,13 +4,12 @@
 SceneSettings:
   m_ObjectHideFlags: 0
   m_PVSData: 
-  m_QueryMode: 1
   m_PVSObjectsArray: []
   m_PVSPortalsArray: []
   m_OcclusionBakeSettings:
-    viewCellSize: 1
-    bakeMode: 2
-    memoryUsage: 10485760
+    smallestOccluder: 5
+    smallestHole: .25
+    backfaceThreshold: 100
 --- !u!104 &2
 RenderSettings:
   m_Fog: 0
@@ -23,6 +22,7 @@ RenderSettings:
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: .5
   m_FlareStrength: 1
+  m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
   m_SpotCookie: {fileID: 0}
   m_ObjectHideFlags: 0
@@ -121,9 +121,6 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
-  m_UserAABB:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
 --- !u!114 &3124656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,9 +149,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
-  m_UserAABB:
-    m_Center: {x: .0268169641, y: .317436337, z: -5.49946117}
-    m_Extent: {x: 1.8176378, y: 1.16102159, z: .256163597}
 --- !u!1 &30976131
 GameObject:
   m_ObjectHideFlags: 0
@@ -493,6 +487,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &212147378
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -588,6 +585,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &261158121
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -690,6 +690,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &296986290
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -823,6 +826,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &331664961
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1424,6 +1430,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &471507550
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1493,6 +1502,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &478917908
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1692,6 +1704,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &559661028
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1887,7 +1902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 35
-  mouseSensitivty: 5
+  mouseSensitivty: 150
   upDownRange: 60
 --- !u!143 &606139784
 CharacterController:
@@ -2097,6 +2112,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_HDR: 0
+  m_OcclusionCulling: 1
 --- !u!1 &662340992
 GameObject:
   m_ObjectHideFlags: 0
@@ -2286,6 +2302,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_HDR: 0
+  m_OcclusionCulling: 1
 --- !u!1 &782973626
 GameObject:
   m_ObjectHideFlags: 0
@@ -2519,6 +2536,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &944677782
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2574,6 +2594,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &966797826
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2957,6 +2980,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &1079746120
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3077,6 +3103,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &1103027510
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3278,6 +3307,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &1133708569
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3387,6 +3419,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &1186091129
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3456,6 +3491,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &1198241830
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3570,9 +3608,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
-  m_UserAABB:
-    m_Center: {x: 1.52586854, y: -.134988606, z: -.0636057854}
-    m_Extent: {x: 3.08838797, y: 1.00953054, z: 2.30870676}
 --- !u!1 &1241538244
 GameObject:
   m_ObjectHideFlags: 0
@@ -3673,6 +3708,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &1271205655
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4019,6 +4057,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &1483056999
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4488,6 +4529,9 @@ SkinnedMeshRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
@@ -4514,6 +4558,7 @@ SkinnedMeshRenderer:
   - {fileID: 361465019}
   - {fileID: 1241538245}
   - {fileID: 64310182}
+  m_BlendShapeWeights: []
   m_RootBone: {fileID: 1496454683}
   m_AABB:
     m_Center: {x: -.108202875, y: -.0325777531, z: -.412497759}
@@ -4566,6 +4611,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &1614394857
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4988,6 +5036,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &1813728669
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5057,6 +5108,9 @@ SkinnedMeshRenderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
@@ -5083,6 +5137,7 @@ SkinnedMeshRenderer:
   - {fileID: 1316016540}
   - {fileID: 1812850028}
   - {fileID: 1858515164}
+  m_BlendShapeWeights: []
   m_RootBone: {fileID: 111174747}
   m_AABB:
     m_Center: {x: .104274169, y: .00279401243, z: .866531134}
@@ -5283,6 +5338,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &1906048989
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -5929,6 +5987,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &1962095044
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -6169,6 +6230,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &2055840613
 MeshFilter:
   m_ObjectHideFlags: 0

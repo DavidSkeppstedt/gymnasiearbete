@@ -8,15 +8,15 @@ public class PickupScript : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		rotationVector = new Vector3(0,3,0);
+		rotationVector = new Vector3(0,30,0);
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		
 		
-		gameObject.transform.Rotate(rotationVector);
+		gameObject.transform.Rotate(rotationVector * Time.deltaTime);
 	
 	}
 	
