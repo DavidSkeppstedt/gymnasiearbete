@@ -70,7 +70,7 @@ public class MovementScript : MonoBehaviour {
 				);
 			moveVector = transform.TransformDirection(moveVector);
 			if (Input.GetButton("Jump")) {
-				moveVector.y = 10;
+				moveVector.y = 6;
 			}
 	
 		}
