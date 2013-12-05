@@ -12,11 +12,16 @@ public class ShootingScript : MonoBehaviour {
 	private float downTime = 0.09f;
 	private bool countDown = false;
 	public float shootDistance = 150.0f;
+	private int grInt = 3;
+	public Rigidbody grenade;
+	private GameObject uiGrenade;
+
 	// Use this for initialization
 	void Start () {
 		gun = GameObject.Find("Puls");
 		Screen.lockCursor = true;
 		door = GameObject.Find("Level");
+		uiGrenade = GameObject.Find("Grenade");
 	}
 	
 	
@@ -27,14 +32,28 @@ public class ShootingScript : MonoBehaviour {
 	}
 	
 	
-	
+	void throwGrenade() {
+		if (Input.GetButtonDown("Fire1") && grInt >0 ) {
+			Rigidbody clone;
+			clone = Instantiate(grenade, uiGrenade.transform.position, Camera.main.transform.rotation) as Rigidbody;
+			clone.AddForce(Camera.main.transform.forward * 1000);
+			grInt -=1; 
+		}
+	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		Debug.Log (InventoryScript.currentWeapon);
 		
 		RaycastHit hit;
-		if (gun != null){
+
+		if (InventoryScript.currentWeapon == 3) {
+			throwGrenade();
+
+		}
+
+
+		if (gun != null && InventoryScript.currentWeapon != 3){
 			
 		Vector3 fwd = transform.TransformDirection(gun.transform.forward);
 		Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width*0.5f,Screen.height*0.5f,0));

@@ -10,7 +10,7 @@ public class InventoryScript : MonoBehaviour {
 	public GameObject[] weaponArray;
 	private bool pickedupPrimary;
 	private bool pickedupSecondary;
-	private int currentWeapon;
+	public static int currentWeapon;
 	
 	// Use this for initialization
 	void Start () {
@@ -35,6 +35,7 @@ public class InventoryScript : MonoBehaviour {
 					currentWeapon = 0;
 					weaponArray[0].gameObject.SetActive(true);
 					weaponArray[1].gameObject.SetActive(false);
+					weaponArray[2].gameObject.renderer.enabled = false;
 					Debug.Log("Changed to primary");
 				}
 			}
@@ -49,11 +50,22 @@ public class InventoryScript : MonoBehaviour {
 					currentWeapon = 1;
 					weaponArray[1].gameObject.SetActive(true);
 					weaponArray[0].gameObject.SetActive(false);
+					weaponArray[2].gameObject.renderer.enabled = false;
 					Debug.Log("Change to seconday");
 				}
 			}
 			
 			
+		}
+
+		if (Input.GetKey ("3")) {
+			if (currentWeapon != 3) {
+				currentWeapon = 3;
+				weaponArray[1].gameObject.SetActive(false);
+				weaponArray[0].gameObject.SetActive(false);
+				weaponArray[2].gameObject.renderer.enabled = true;
+			}
+		
 		}
 		
 		
