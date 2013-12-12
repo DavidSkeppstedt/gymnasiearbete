@@ -14,16 +14,25 @@ public class MovementScript : MonoBehaviour {
 	public float upDownRange = 60.0f;
 	private float verticalRotation = 0;
 	private Vector3 moveVector;
-	
-	
-	
+
+
+	private float oldR;
+	private float oldH;
+	private float oldCY;
 	// Use this for initialization
 	void Start () {
 		//Init the variables
 		cc = GetComponent<CharacterController>();
+
 		camera = GetComponentInChildren<Camera>(); // The main fps camera
 		//Hide the cursor
 		Screen.showCursor = false;
+
+		oldR =cc.radius; 
+		oldH = cc.height;
+		oldCY = Camera.main.transform.position.y;
+
+
 		
 	}
 	
@@ -39,10 +48,33 @@ public class MovementScript : MonoBehaviour {
 		
 		rotateHead();
 		cc.Move(checkKeyInput()* Time.deltaTime);
-		
+		crouch();
 		
 		
 	}
+
+	private void crouch(){
+		if (Input.GetButton("Crouch")) {
+			
+			cc.height = 1.29f;
+			cc.radius = 0.5f;
+			//Camera.main.transform.localPosition = new Vector3(0,-.7f,0);
+
+		}else {
+			if (cc.height != oldH) {
+			cc.height = oldH;
+			cc.radius = oldR;
+			Camera.main.transform.localPosition = new Vector3(0,0,0);
+			transform.position = new Vector3(transform.position.x,transform.position.y +0.3f,transform.position.z);
+			}
+
+		}
+
+
+
+	}
+
+
 	private void rotateHead() {
 		transform.Rotate(new Vector3(0,(Input.GetAxis("Mouse X")*mouseSensitivty)*Time.deltaTime,0));
 		
