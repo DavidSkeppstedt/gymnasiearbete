@@ -34,7 +34,7 @@ public class MovementScript : MonoBehaviour {
 	}
 	//This method is called once every fixed frame. Used for physics calculation
 	void FixedUpdate() {
-	
+		
 		
 		
 		rotateHead();
@@ -70,9 +70,9 @@ public class MovementScript : MonoBehaviour {
 				);
 			moveVector = transform.TransformDirection(moveVector);
 			if (Input.GetButton("Jump")) {
-				moveVector.y = 10;
+				moveVector.y = 6;
 			}
-	
+			
 		}
 		
 		moveVector.y += Physics.gravity.y *Time.deltaTime;
