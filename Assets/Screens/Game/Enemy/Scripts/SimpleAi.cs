@@ -28,11 +28,11 @@ public class SimpleAi : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		distanceToPlayer = 0;
-		lookDistance = 80;
-		attackRange = 60;
+		lookDistance = 21;
+		attackRange = 8;
 		dampning = 6.0f;
-		runDistance = 35.0f;
-		moveSpeed = 23.0f;
+		runDistance = 2.0f;
+		moveSpeed = 3.0f;
 		cc = GetComponent<CharacterController>();
 	
 	}
@@ -58,8 +58,9 @@ public class SimpleAi : MonoBehaviour {
 		test = new Vector3(test.x,test.y,test.z);
 		
 		//Debug.Log(shouldShoot);
-		
-		lookAt();
+
+			lookAt ();
+
 		//Distances till spelaren.
 		distanceToPlayer = Vector3.Distance(test,transform.position);	
 		
@@ -91,7 +92,7 @@ public class SimpleAi : MonoBehaviour {
 		//Ser inte spelaren och patrulerar
 		if (distanceToPlayer > lookDistance) {
 			//Patroll!
-			renderer.material.color = Color.white;
+			//renderer.material.color = Color.white;
 			
 		
 			patroll();
@@ -140,7 +141,7 @@ public class SimpleAi : MonoBehaviour {
 			
 				var rotation = Quaternion.LookRotation(target.position - transform.position);
 				transform.rotation = Quaternion.Slerp(transform.rotation,rotation,Time.deltaTime*dampning);
-				renderer.material.color = Color.red;		
+				//renderer.material.color = Color.red;		
 				shouldPatroll = false;
 			
 	}
@@ -149,18 +150,18 @@ public class SimpleAi : MonoBehaviour {
 		//Debug.Break();
 		
 		if (!shouldShoot && canSee){
-			renderer.material.color = Color.yellow;
+			//renderer.material.color = Color.yellow;
 			moveDirection = transform.forward;
 			moveDirection *=moveSpeed*2;
 			
-			Debug.Log("Not Shooting");
+			//Debug.Log("Not Shooting");
 			
 		}
 		
 		if (shouldShoot) {
 			moveDirection.x = 0;
 			moveDirection.z = 0;
-			Debug.Log("Shooting");
+			//Debug.Log("Shooting");
 			//Debug.Break();
 			
 		}
@@ -185,8 +186,8 @@ public class SimpleAi : MonoBehaviour {
 			if (canShoot) {
 				//Shoot here!
 				stopMe= true;
-				renderer.material.color = Color.blue;
-				target.gameObject.SendMessage("LoseHealth",10);
+				//renderer.material.color = Color.blue;
+				target.gameObject.SendMessage("LoseHealth",6);
 				canShoot = false;
 				timer = 0.9f;
 			}else {
@@ -217,7 +218,7 @@ public class SimpleAi : MonoBehaviour {
 	
 	
 	void OnControllerColliderHit (ControllerColliderHit hit) { 
-    	 if (hit.normal.y < 0.707){
+    	 if (hit.normal.y < 0.710){
 			p *=-1;
   		}
 	}
