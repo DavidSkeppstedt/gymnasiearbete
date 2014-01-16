@@ -5,6 +5,7 @@ public class ShootingScript : MonoBehaviour {
 	
 	
 	private GameObject door;
+	public GameObject sparkWall;
 	public AudioClip weaponSound;
 	public LineRenderer renderObj;
 	private bool canShoot = true;	
@@ -43,7 +44,7 @@ public class ShootingScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (InventoryScript.currentWeapon);
+		//Debug.Log (InventoryScript.currentWeapon);
 		
 		RaycastHit hit;
 		
@@ -59,7 +60,7 @@ public class ShootingScript : MonoBehaviour {
 			Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width*0.5f,Screen.height*0.5f,0));
 			
 			if (Physics.Raycast(ray,out hit, shootDistance)) {
-				Debug.Log(hit.collider.gameObject.name);
+				//Debug.Log(hit.collider.gameObject.name);
 				Debug.DrawLine(gun.transform.position,hit.point);
 				
 				
@@ -110,11 +111,25 @@ public class ShootingScript : MonoBehaviour {
 	// Here we check what is shot
 	private void shoot(Collider collider,Vector3 hit) {
 		
-		
+
 		if (collider.name == "Cube") {
-			pulseGun(hit,collider);	
-			
+			pulseGun(hit,collider);		
 		}
+
+		if (collider.transform.root.gameObject.name == "MAP2" || 
+		    collider.transform.root.gameObject.name == "DoorController" ) {
+
+			//instantiate a particle object at the position of the hit
+			GameObject clone = Instantiate(sparkWall, collider.transform.position, collider.transform.rotation) as GameObject;
+
+
+
+
+
+		}
+
+
+
 		if (collider.name == "Sphere_1") {
 			door.SendMessage("OpenDoor");
 		}
