@@ -14,24 +14,24 @@ public class SimpleAi : MonoBehaviour {
 	private bool canSee = false;
 	private bool shouldRun = false;
 	private bool shouldPatroll = false;
-	private bool stopMe = false;
+
 	private int p = 3;
 	private bool canShoot = true;
 	private float timer = 1;
+	private bool shouldMove = false;
 	
 	private CharacterController cc;
-	private float gravity = 20;
 	private Vector3 moveDirection = Vector3.zero;
-	
+	private Vector3 direction;
 	
 	
 	// Use this for initialization
 	void Start () {
 		distanceToPlayer = 0;
-		lookDistance = 21;
+		lookDistance = 20;
 		attackRange = 8;
 		dampning = 6.0f;
-		runDistance = 2.0f;
+		runDistance = 4.0f;
 		moveSpeed = 3.0f;
 		cc = GetComponent<CharacterController>();
 	
@@ -50,142 +50,139 @@ public class SimpleAi : MonoBehaviour {
 		
 	}
 	
-	
+	void FixedUpdate(){
+
+		if (shouldPatroll) {
+			
+			cc.SimpleMove(moveDirection);
+		}
+
+
+		if (shouldMove && canSee) {
+			moveDirection = transform.forward;
+			moveDirection *=moveSpeed*2;
+			cc.SimpleMove(moveDirection);
+			Debug.Log("Run Towards");
+		}
+
+		if (shouldRun && canSee) {
+			Debug.Log("Run");
+			moveDirection = target.transform.forward;
+			moveDirection *=moveSpeed;
+			cc.SimpleMove(moveDirection);
+		} 
+
+
+	}
+
+
 	// Update is called once per frame
 	void Update () {
-		
-		Vector3 test = target.position;
-		test = new Vector3(test.x,test.y,test.z);
-		
-		//Debug.Log(shouldShoot);
 
-			lookAt ();
+		//Tar fram 3d koordinaten från target
+		Vector3 targetPos = target.position;
+		targetPos = new Vector3(targetPos.x,targetPos.y,targetPos.z);
 
 		//Distances till spelaren.
-		distanceToPlayer = Vector3.Distance(test,transform.position);	
-		
-		//Vector3 fwd = transform.TransformDirection(Vector3.forward);
+		distanceToPlayer = Vector3.Distance(targetPos,transform.position);
+		direction = (target.position - transform.position).normalized;
+	
+		//Kollar om man är tillträckligt nära för att spara på CPU-power
+		//Och på så sätt slippa dyra operationer/beräkningar
+		//Debug.Log (canSee + ":" +distanceToPlayer);
+		//Method call
+		lookAt ();
+
+		if (distanceToPlayer < 20) {
+			//Method call
+			castRay ();
+						
+
+
+			if (shouldPatroll) {
+				shouldPatroll = false;
+				moveDirection = Vector3.zero;
+			}
+
+			shouldMove = true;
+
+
+
+
+			if (distanceToPlayer < attackRange && distanceToPlayer > runDistance && canSee) {
+				Debug.Log("Attack");
+				shouldShoot = true;	
+				shouldMove = false;
+				shouldRun = false;
+				attack();
+			}else {
+				shouldShoot = false;
+			}
+			if (distanceToPlayer < runDistance && canSee) {
+				shouldMove = false;
+				shouldRun = true;
+				shouldShoot = false;
+
+			}else {
+				shouldRun = false;
+			}
+
+
+
+
+
+		}  
+
+		if (!canSee) {
+			moveDirection.z = p;
+			shouldPatroll = true;
+		}
+	
+	
+	}
+
+	void castRay(){
 		RaycastHit hit;
+		direction = (target.position - transform.position).normalized;
+		Vector3 fwd = transform.TransformDirection(Vector3.forward);
+
 		
-		//Debug.Log(target.position);
-		
-		Vector3 direction = (target.position-transform.position).normalized;
-		
-		
-		
-        if (Physics.Raycast(transform.position,direction,out hit, 150)){
-            //Debug.Log(hit.collider.name);
-        	
-			Debug.DrawLine(transform.position,hit.transform.position);
+		if (Physics.Raycast (transform.position, direction, out hit, 20)) {
+
+			
+			Debug.DrawLine (transform.position, hit.transform.position);
 			
 			if (hit.collider.gameObject.name == "PlayerObject") {
-				canSee =true;
-			}else {
+
+				canSee = true;
+			} else {
 				canSee = false;
 			}
 			
 			
 		}
-		
-		//Debug.Log("Distance:" + distanceToPlayer); /*/+" Can See:" +canSee + " Should Shoot:" + shouldShoot + " Should Run:" + shouldRun + " Should Patroll:" + shouldPatroll);
-	//*/
-		//Ser inte spelaren och patrulerar
-		if (distanceToPlayer > lookDistance) {
-			//Patroll!
-			//renderer.material.color = Color.white;
-			
-		
-			patroll();
-		}
-		
-		
-		//Ser spelaren
-		if (distanceToPlayer < lookDistance) {
-			//shouldShoot = false;
-			//move towrads player.
-			
-			moveTo();
-			if (!canSee) {
-				patroll();
-			}
-			
-			
-		}
-		
-		
-		
-		//Om den ser spelaren och ska attackera
-		if (distanceToPlayer < attackRange) {
-				//attack the player.
-				
-				
-				shouldShoot = true;
-				attack ();
-		}else {
-			shouldShoot = false;
-		}
-		
-		//Om spelaren är för nära och ska backa.
-		if (distanceToPlayer < runDistance) {
-			shouldRun = true;
-		}else {
-			shouldRun = false;
-		}
-		
-	
-	}
 
+	}
 
 
 	void lookAt() {
+			if (true) {
+				//Hittar rotations skillnaden mellan spelaren och alienen
+				var rotation = Quaternion.LookRotation (target.position - transform.position);
+				//Räknar ut hur den skall interpolera rotationen för att det ska ske bra ut.
+				transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime * dampning);
+			}
 			
-				var rotation = Quaternion.LookRotation(target.position - transform.position);
-				transform.rotation = Quaternion.Slerp(transform.rotation,rotation,Time.deltaTime*dampning);
-				//renderer.material.color = Color.red;		
-				shouldPatroll = false;
 			
 	}
-	
-	void moveTo() {
-		//Debug.Break();
-		
-		if (!shouldShoot && canSee){
-			//renderer.material.color = Color.yellow;
-			moveDirection = transform.forward;
-			moveDirection *=moveSpeed*2;
-			
-			//Debug.Log("Not Shooting");
-			
-		}
-		
-		if (shouldShoot) {
-			moveDirection.x = 0;
-			moveDirection.z = 0;
-			//Debug.Log("Shooting");
-			//Debug.Break();
-			
-		}
-		
-	
-		
-		
-		
-		if (shouldRun) {
-			moveDirection = target.transform.forward;
-			moveDirection *=moveSpeed;
-		}
-			moveDirection.y -= gravity * Time.deltaTime;	
-			cc.Move(moveDirection*Time.deltaTime);
-			
 
-	}
 	
 	
 	void attack () {
 		if (shouldShoot && canSee) {
 			if (canShoot) {
 				//Shoot here!
-				stopMe= true;
+
 				//renderer.material.color = Color.blue;
 				target.gameObject.SendMessage("LoseHealth",6);
 				canShoot = false;
@@ -201,18 +198,15 @@ public class SimpleAi : MonoBehaviour {
 	
 			}
 			
-		}else {
-			//stopMe = false;
 		}
 		
 		
 	}
 	
 	void patroll() {
-		shouldPatroll = true;
-		moveDirection.y -= gravity*Time.deltaTime;	
-		moveDirection.x = p;
-		cc.Move(moveDirection*Time.deltaTime);
+
+			moveDirection.x = p;
+			cc.Move(moveDirection*Time.deltaTime);
 		
 	}
 	

@@ -18,7 +18,7 @@ public class InventoryScript : MonoBehaviour {
 		
 		
 		
-		pickedupPrimary = false;
+		pickedupPrimary = true;
 		pickedupSecondary = false;
 		currentWeapon = -1;
 		

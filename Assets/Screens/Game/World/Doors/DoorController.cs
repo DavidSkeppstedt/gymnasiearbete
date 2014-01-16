@@ -18,11 +18,16 @@ public class DoorController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		map.animation.PlayQueued (open);
+		if (other.name =="PlayerObject") {
+			map.animation.PlayQueued (open);
+		}
 
 	}
 	void OnTriggerExit(Collider other) {
-		map.animation.PlayQueued(close);
+		if (other.name =="PlayerObject") {
+			map.animation.PlayQueued(close);
+		}
+
 	}
 
 

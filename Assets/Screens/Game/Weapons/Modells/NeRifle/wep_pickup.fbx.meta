@@ -1,39 +1,14 @@
 fileFormatVersion: 2
-guid: 11577c81899e1494ea073c258dabaed4
+guid: d97083b28506005438e1b78fda244596
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
     100000: //RootNode
-    100002: disc
-    100004: hover
-    100006: Light
-    100008: Light_1
-    100010: Robot
-    100012: robot
-    100014: shotplace
-    100016: Sphere
     400000: //RootNode
-    400002: disc
-    400004: hover
-    400006: Light
-    400008: Light_1
-    400010: Robot
-    400012: robot
-    400014: shotplace
-    400016: Sphere
-    2300000: disc
-    2300002: robot
-    2300004: shotplace
-    2300006: Sphere
-    3300000: disc
-    3300002: robot
-    3300004: shotplace
-    3300006: Sphere
-    4300000: disc
-    4300002: shotplace
-    4300004: robot
-    4300006: Sphere
-    7400000: C4D Animation Take
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Pulse_Rifle
+    6400000: //RootNode
     9500000: //RootNode
   materials:
     importMaterials: 1

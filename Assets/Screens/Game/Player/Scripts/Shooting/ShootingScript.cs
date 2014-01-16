@@ -7,19 +7,19 @@ public class ShootingScript : MonoBehaviour {
 	private GameObject door;
 	public GameObject sparkWall;
 	public AudioClip weaponSound;
-	public LineRenderer renderObj;
+
 	private bool canShoot = true;	
 	private GameObject gun;
 	private float downTime = 0.09f;
 	private bool countDown = false;
-	public float shootDistance = 150.0f;
+	public float shootDistance = 19.0f;
 	private int grInt = 3;
 	public Rigidbody grenade;
 	private GameObject uiGrenade;
 	
 	// Use this for initialization
 	void Start () {
-		gun = GameObject.Find("Puls");
+		gun = GameObject.Find("Gun");
 		Screen.lockCursor = true;
 		door = GameObject.Find("Level");
 		uiGrenade = GameObject.Find("Grenade");
@@ -58,46 +58,45 @@ public class ShootingScript : MonoBehaviour {
 			
 			Vector3 fwd = transform.TransformDirection(gun.transform.forward);
 			Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width*0.5f,Screen.height*0.5f,0));
-			
-			if (Physics.Raycast(ray,out hit, shootDistance)) {
+			int layerMask = 1<<9;
+			layerMask =~layerMask;   
+			if (Physics.Raycast(ray,out hit, shootDistance,layerMask)) {
 				//Debug.Log(hit.collider.gameObject.name);
 				Debug.DrawLine(gun.transform.position,hit.point);
 				
 				
-				if (Input.GetButtonDown("Fire1")) {
-					this.audio.PlayOneShot(weaponSound);//Play a sound!s
+				if (Input.GetButton("Fire1")) {
+					//this.audio.PlayOneShot(weaponSound);//Play a sound!s
 					if (canShoot) {
 						
 						canShoot = false;
 						shoot(hit.collider,hit.point);
 						
-						renderObj.SetPosition(0,gun.transform.position);
+						//renderObj.SetPosition(0,gun.transform.position);
 						//renderObj.transform.rotation = transform.rotation;
 						//Vector3 ss = new Vector3(transform.position.x,transform.position.y,transform.position.z+transform.forward.z*100);
 						if (hit.point != null) {
 							
-							renderObj.SetPosition(1,hit.point);
+						//	renderObj.SetPosition(1,hit.point);
 						}else {
-							renderObj.SetPosition(1,new Vector3(gun.transform.position.x,gun.transform.position.y,gun.transform.position.z+100));
+							//renderObj.SetPosition(1,new Vector3(gun.transform.position.x,gun.transform.position.y,gun.transform.position.z+100));
 						}
 						
 						countDown = true;
 						
 					}
-				}else if (Input.GetButtonUp("Fire1")) {
-					canShoot = true;
-					renderObj.enabled = false;
 				}
 				
 			}
 			
 			if (countDown) {
-				renderObj.enabled = true;
+				//renderObj.enabled = true;
 				downTime -=Time.deltaTime;
 				if (downTime <=0) {
-					renderObj.enabled = false;
+					//renderObj.enabled = false;
 					countDown = false;
-					downTime= 0.09f;
+					downTime= 0.28f;
+					canShoot = true;
 				}	
 				
 				
@@ -110,8 +109,8 @@ public class ShootingScript : MonoBehaviour {
 	
 	// Here we check what is shot
 	private void shoot(Collider collider,Vector3 hit) {
-		
-
+		//Debug.Log("C" + collider.transform.root.gameObject.name);
+		GameObject clone = Instantiate(sparkWall, hit, collider.transform.rotation) as GameObject;
 		if (collider.name == "Cube") {
 			pulseGun(hit,collider);		
 		}
@@ -120,7 +119,7 @@ public class ShootingScript : MonoBehaviour {
 		    collider.transform.root.gameObject.name == "DoorController" ) {
 
 			//instantiate a particle object at the position of the hit
-			GameObject clone = Instantiate(sparkWall, collider.transform.position, collider.transform.rotation) as GameObject;
+			//GameObject clone = Instantiate(sparkWall, hit, collider.transform.rotation) as GameObject;
 
 
 

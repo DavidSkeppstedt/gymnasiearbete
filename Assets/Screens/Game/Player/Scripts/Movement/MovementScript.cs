@@ -7,8 +7,8 @@ public class MovementScript : MonoBehaviour {
 	//Declare variabler
 	private CharacterController cc;
 	private Camera camera;
-	public float moveSpeed = 15f;
-	public float mouseSensitivty = 10f;
+	public float moveSpeed = 4.8f;
+	public float mouseSensitivty = 225f;
 	
 	
 	public float upDownRange = 60.0f;
@@ -39,14 +39,14 @@ public class MovementScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		
+		rotateHead();
 	}
 	//This method is called once every fixed frame. Used for physics calculation
 	void FixedUpdate() {
 		
 		
 		
-		rotateHead();
+
 		cc.Move(checkKeyInput()* Time.deltaTime);
 		crouch();
 		
@@ -78,19 +78,11 @@ public class MovementScript : MonoBehaviour {
 	private void rotateHead() {
 		transform.Rotate(new Vector3(0,(Input.GetAxis("Mouse X")*mouseSensitivty)*Time.deltaTime,0));
 		
-		//Inverted because it will be interted otherwise :P
+		//Inverted because it will be inverted otherwise :P
 		verticalRotation -=(Input.GetAxis("Mouse Y") * mouseSensitivty)*Time.deltaTime;
 		verticalRotation  = Mathf.Clamp(verticalRotation,-upDownRange,upDownRange);
 		camera.transform.localRotation = Quaternion.Euler(verticalRotation,0,0);
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
 	}
 	
 	private Vector3 checkKeyInput() {
