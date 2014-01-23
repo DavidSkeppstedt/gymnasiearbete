@@ -150,9 +150,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100008}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .5, y: .5, z: .5}
+  m_LocalRotation: {x: 0, y: .99071157, z: 0, w: -.135979995}
+  m_LocalPosition: {x: 0, y: .381458282, z: 0}
+  m_LocalScale: {x: .300000012, y: .300000012, z: .300000012}
   m_Children:
   - {fileID: 400006}
   - {fileID: 400004}
@@ -164,8 +164,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
-  m_LocalRotation: {x: 0, y: -.997335553, z: 0, w: .0729513615}
-  m_LocalPosition: {x: -.0898916125, y: -.836154699, z: -8.60203171}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.7947407, y: 59.6216927, z: 45.5293617}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400008}
@@ -281,8 +281,8 @@ CharacterController:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100010}
   serializedVersion: 2
-  m_Height: 1.20000005
-  m_Radius: .709999979
+  m_Height: .0399999991
+  m_Radius: .790000021
   m_SlopeLimit: 45
   m_StepOffset: .300000012
   m_SkinWidth: .0799999982

@@ -14,7 +14,7 @@ public class ShootingScript : MonoBehaviour {
 	private bool countDown = false;
 	public float shootDistance = 19.0f;
 	private int grInt = 3;
-	public Rigidbody grenade;
+	//public Rigidbody grenade;
 	private GameObject uiGrenade;
 	
 	// Use this for initialization
@@ -32,7 +32,7 @@ public class ShootingScript : MonoBehaviour {
 		
 	}
 	
-	
+	/*
 	void throwGrenade() {
 		if (Input.GetButtonDown("Fire1") && grInt >0 ) {
 			Rigidbody clone;
@@ -40,7 +40,7 @@ public class ShootingScript : MonoBehaviour {
 			clone.AddForce(Camera.main.transform.forward * 1000);
 			grInt -=1; 
 		}
-	}
+	}*/
 	
 	// Update is called once per frame
 	void Update () {
@@ -49,7 +49,7 @@ public class ShootingScript : MonoBehaviour {
 		RaycastHit hit;
 		
 		if (InventoryScript.currentWeapon == 3) {
-			throwGrenade();
+			//throwGrenade();
 			
 		}
 		
