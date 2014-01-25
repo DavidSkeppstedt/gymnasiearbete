@@ -20,17 +20,31 @@ public class AnimationGun : MonoBehaviour {
 
 		if (Input.GetButton ("Fire1")) {
 
-			if (!animation.IsPlaying(reloadAnimation)) {
+			if (!animation.IsPlaying(reloadAnimation) && !animation.IsPlaying(upAnimation) && !animation.IsPlaying (downAnimation)) {
 				animation.Play(fireAnim,PlayMode.StopAll);
 			}
 		}
 
 
-		if (Input.GetKey (KeyCode.R)) {
+		if (Input.GetKey (KeyCode.R) && !animation.IsPlaying(upAnimation) && !animation.IsPlaying (downAnimation)) {
 			animation.Play(reloadAnimation,PlayMode.StopAll);
 		}
 
-		animation.PlayQueued(idleAnim);
+		if (!animation.IsPlaying (downAnimation)) {
+			animation.PlayQueued (idleAnim);
+		}
 	
 	}
+
+
+
+	void playUp() {
+		animation.Play (upAnimation, PlayMode.StopAll);
+	}
+	
+	void playDown() {
+		animation.Play (downAnimation, PlayMode.StopAll);
+	}
+
+
 }

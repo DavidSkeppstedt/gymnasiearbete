@@ -8,7 +8,8 @@ public class ShootingScript : MonoBehaviour {
 	public GameObject sparkWall;
 	public AudioClip weaponSound;
 
-	private bool canShoot = true;	
+	private bool canShoot = true;
+	private bool changeWeapon = false;
 	private GameObject gun;
 	private float downTime = 0.09f;
 	private bool countDown = false;
@@ -31,16 +32,16 @@ public class ShootingScript : MonoBehaviour {
 		
 		
 	}
-	
-	/*
-	void throwGrenade() {
-		if (Input.GetButtonDown("Fire1") && grInt >0 ) {
-			Rigidbody clone;
-			clone = Instantiate(grenade, uiGrenade.transform.position, Camera.main.transform.rotation) as Rigidbody;
-			clone.AddForce(Camera.main.transform.forward * 1000);
-			grInt -=1; 
-		}
-	}*/
+
+	public void setCanShoot(bool toogle) {
+		this.changeWeapon = toogle;
+	}
+
+	public bool getCanShoot() {
+		return this.changeWeapon;
+
+	}
+
 	
 	// Update is called once per frame
 	void Update () {
@@ -65,7 +66,7 @@ public class ShootingScript : MonoBehaviour {
 				Debug.DrawLine(gun.transform.position,hit.point);
 				
 				
-				if (Input.GetButton("Fire1")) {
+				if (Input.GetButton("Fire1") && !changeWeapon) {
 					//this.audio.PlayOneShot(weaponSound);//Play a sound!s
 					if (canShoot) {
 						

@@ -2,61 +2,100 @@
 using System.Collections;
 
 public class InventoryScript : MonoBehaviour {
-	
-	
-	
-	
-	
+
 	public GameObject[] weaponArray;
 	private bool pickedupPrimary;
 	private bool pickedupSecondary;
+	private bool changing,downGun,upGun,downRifle,upRifle,toggled;
 	public static int currentWeapon;
+	private ShootingScript shootScript;
 	
 	// Use this for initialization
 	void Start () {
 		
 		
 		
-		
+		shootScript =GameObject.Find("PlayerObject").GetComponent("ShootingScript") as ShootingScript;
 		pickedupPrimary = true;
-		pickedupSecondary = false;
-		currentWeapon = -1;
+		pickedupSecondary = true;
+
+		currentWeapon = 0;
+		changing =downGun=downRifle=upRifle=upGun=toggled= false;
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+
+		//Från Gevär till Pistol
 		if (Input.GetKey("1")) {
 			
 			if (currentWeapon != 0) {
 				if (pickedupPrimary) {
-					SendMessage("setGun",weaponArray[0]);
+					//SendMessage("setGun",weaponArray[0]);
+					weaponArray[1].gameObject.SendMessage("playDown");
 					currentWeapon = 0;
-					weaponArray[0].gameObject.SetActive(true);
-					weaponArray[1].gameObject.SetActive(false);
+					changing = true;
 
-					Debug.Log("Changed to primary");
+
+					//weaponArray[0].gameObject.SetActive(true);
+					//weaponArray[1].gameObject.SetActive(false);
+
+					Debug.Log("Changed to primary" + (1.0f / Time.deltaTime));
 				}
 			}
 			
 			
 		}
-		
+
+
+		//Från Pistol till gevär
 		if (Input.GetKey("2")) {
 			
 			if (currentWeapon != 1) {
-				if (pickedupSecondary) {
-					currentWeapon = 1;
-					weaponArray[1].gameObject.SetActive(true);
-					weaponArray[0].gameObject.SetActive(false);
+				if (pickedupSecondary && !changing) {
 
-					Debug.Log("Change to seconday");
+					weaponArray[0].gameObject.SendMessage("playDown");
+				
+					currentWeapon = 1;
+					changing = true;
+
+					//weaponArray[1].gameObject.SetActive(true);
+					//weaponArray[0].gameObject.SetActive(false);
+
+					Debug.Log("Change to seconday" + (1.0f / Time.deltaTime));
 				}
 			}
 			
 			
 		}
+
+
+		if (changing) {
+			toggled =true;
+			shootScript.setCanShoot(true);
+
+			if (currentWeapon == 1) {
+				fromGunToRifle("Pistol_Down","Rifle_Up",0,1);
+			}
+
+			if (currentWeapon == 0) {
+				fromRifleToGun("Rifle_Down","Pistol_Up",1,0);
+			}
+
+
+
+
+		}else {
+
+			if (toggled){
+				toggled = false;
+				shootScript.setCanShoot(false);
+			}
+		}
+
+
 		
 
 		
@@ -64,6 +103,69 @@ public class InventoryScript : MonoBehaviour {
 		
 		
 	}
+
+	void fromGunToRifle(string downAnimation,string upAnimation, int deactive,int active) {
+		if (!weaponArray[deactive].animation.IsPlaying (downAnimation) && !downGun) {
+			//Detta innbär att animationen är klar
+			//Då skall vi slå på nästa vapen
+			//Först avaktivera nuvarande
+			weaponArray[deactive].gameObject.SetActive(false);
+			upGun = false;
+			downRifle = false;
+			downGun = true;
+
+		}
+		if (downGun) {
+			//Detta innebär att det vapen vi byter ifrån är nere och vi skall starta animationen på	
+			//Det nya vapnen
+			if (upGun == false) {
+				//Först aktiverar vi det
+				weaponArray[active].gameObject.SetActive(true);
+				//Sen spelar vi up animationen
+				weaponArray[active].gameObject.SendMessage("playUp");
+				upGun = true;
+
+			}
+
+			if (!weaponArray[active].gameObject.animation.IsPlaying(upAnimation)) {
+				changing = false;
+		}
+
+
+
+	}
+}
+	void fromRifleToGun(string downAnimation,string upAnimation, int deactive,int active) {
+		if (!weaponArray[deactive].animation.IsPlaying (downAnimation) && !downRifle) {
+			//Detta innbär att animationen är klar
+			//Då skall vi slå på nästa vapen
+			//Först avaktivera nuvarande
+			weaponArray[deactive].gameObject.SetActive(false);
+			upRifle = false;
+			downGun = false;
+			downRifle = true;
+			
+		}
+		if (downRifle) {
+			//Detta innebär att det vapen vi byter ifrån är nere och vi skall starta animationen på	
+			//Det nya vapnen
+			if (!upRifle) {
+				//Först aktiverar vi det
+				weaponArray[active].gameObject.SetActive(true);
+				//Sen spelar vi up animationen
+				weaponArray[active].gameObject.SendMessage("playUp");
+				upRifle = true;
+			}
+			if (!weaponArray[active].animation.IsPlaying(upAnimation)) {
+				changing = false;
+			}
+		}
+	}
+
+
+
+
+
 	
 	
 	void pickUp(int index) {
