@@ -41,7 +41,15 @@ public class SimpleAi : MonoBehaviour {
 	void takeHit() {
 		
 		if (health >= 0) {
-			health -=25;
+			//Skada från pistol
+			if (InventoryScript.currentWeapon == 0) {
+				health -=25;
+			}
+
+			if (InventoryScript.currentWeapon == 1) {
+				health -=30;
+			}
+
 		}else {
 			Destroy(transform.gameObject);
 			HealthScript.killed +=1;

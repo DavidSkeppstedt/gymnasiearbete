@@ -13,8 +13,12 @@ public class ShootingScript : MonoBehaviour {
 	private GameObject gun;
 	private float downTime = 0.09f;
 	private bool countDown = false;
-	public float shootDistance = 19.0f;
-	private int grInt = 3;
+	public static float shootDistance = 19.0f;
+	public static bool reloading = false;
+
+	public static int rounds = 15;
+	public static int rifleRounds = 30;
+
 	//public Rigidbody grenade;
 	private GameObject uiGrenade;
 	
@@ -45,73 +49,56 @@ public class ShootingScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		//Debug.Log (InventoryScript.currentWeapon);
+
 		
 		RaycastHit hit;
-		
-		if (InventoryScript.currentWeapon == 3) {
-			//throwGrenade();
-			
-		}
-		
-		
-		if (gun != null && InventoryScript.currentWeapon != 3){
-			
-			Vector3 fwd = transform.TransformDirection(gun.transform.forward);
-			Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width*0.5f,Screen.height*0.5f,0));
-			int layerMask = 1<<9;
-			layerMask =~layerMask;   
+
+		Vector3 fwd = transform.TransformDirection(gun.transform.forward);
+		Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width*0.5f,Screen.height*0.5f,0));
+		int layerMask = 1<<9;
+		layerMask =~layerMask;
+
+
+		if (Input.GetButton("Fire1") && canShoot && !changeWeapon && (rounds > 0 && InventoryScript.currentWeapon == 0 || rifleRounds > 0 && InventoryScript.currentWeapon == 1) && !reloading) {
+
+			if (InventoryScript.currentWeapon == 0) {
+				rounds -=1;
+			}else {
+				rifleRounds -=1; 
+			}
+
+			canShoot = false;
+			countDown = true;
+
+
 			if (Physics.Raycast(ray,out hit, shootDistance,layerMask)) {
-				//Debug.Log(hit.collider.gameObject.name);
 				Debug.DrawLine(gun.transform.position,hit.point);
-				
-				
-				if (Input.GetButton("Fire1") && !changeWeapon) {
-					//this.audio.PlayOneShot(weaponSound);//Play a sound!s
-					if (canShoot) {
-						
-						canShoot = false;
-						shoot(hit.collider,hit.point);
-						
-						//renderObj.SetPosition(0,gun.transform.position);
-						//renderObj.transform.rotation = transform.rotation;
-						//Vector3 ss = new Vector3(transform.position.x,transform.position.y,transform.position.z+transform.forward.z*100);
-						if (hit.point != null) {
-							
-						//	renderObj.SetPosition(1,hit.point);
-						}else {
-							//renderObj.SetPosition(1,new Vector3(gun.transform.position.x,gun.transform.position.y,gun.transform.position.z+100));
-						}
-						
-						countDown = true;
-						
-					}
-				}
-				
+					shoot(hit.collider,hit.point);
+
 			}
-			
-			if (countDown) {
-				//renderObj.enabled = true;
-				downTime -=Time.deltaTime;
-				if (downTime <=0) {
-					//renderObj.enabled = false;
-					countDown = false;
-					downTime= 0.28f;
-					canShoot = true;
-				}	
-				
-				
-			}
-			
-			
-			
 		}
+
+		if (countDown) {
+			downTime -=Time.deltaTime;
+			if (downTime <=0) {
+				
+				countDown = false;
+				downTime= 0.28f;
+				canShoot = true;
+			}	
+		}
+
+
+
+		
 	}
 	
 	// Here we check what is shot
 	private void shoot(Collider collider,Vector3 hit) {
-		//Debug.Log("C" + collider.transform.root.gameObject.name);
+
+
 		GameObject clone = Instantiate(sparkWall, hit, collider.transform.rotation) as GameObject;
+
 		if (collider.name == "Cube") {
 			pulseGun(hit,collider);		
 		}

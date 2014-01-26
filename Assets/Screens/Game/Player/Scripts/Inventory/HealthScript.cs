@@ -16,9 +16,12 @@ public class HealthScript : MonoBehaviour {
 	
 	
 	void Update () {
-		
-		HP_UI.text = "HP:" + Health + " Killed:" + killed;
-		
+
+		if (InventoryScript.currentWeapon == 0) {
+						HP_UI.text = "HP:" + Health + " Killed:" + killed + " Rounds:" + ShootingScript.rounds;
+		} else {
+			HP_UI.text = "HP:" + Health + " Killed:" + killed + " Rounds:" + ShootingScript.rifleRounds;
+		}
 		if (Health <= 0) {
 			
 			Die();

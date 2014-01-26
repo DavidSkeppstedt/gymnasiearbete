@@ -18,7 +18,7 @@ public class AnimationGun : MonoBehaviour {
 	void Update () {
 	
 
-		if (Input.GetButton ("Fire1")) {
+		if (Input.GetButton ("Fire1") && (ShootingScript.rounds > 0 && InventoryScript.currentWeapon == 0 || ShootingScript.rifleRounds > 0 && InventoryScript.currentWeapon == 1)) {
 
 			if (!animation.IsPlaying(reloadAnimation) && !animation.IsPlaying(upAnimation) && !animation.IsPlaying (downAnimation)) {
 				animation.Play(fireAnim,PlayMode.StopAll);
@@ -28,7 +28,26 @@ public class AnimationGun : MonoBehaviour {
 
 		if (Input.GetKey (KeyCode.R) && !animation.IsPlaying(upAnimation) && !animation.IsPlaying (downAnimation)) {
 			animation.Play(reloadAnimation,PlayMode.StopAll);
+
+
+			if (InventoryScript.currentWeapon == 0) {
+				ShootingScript.rounds = 15;
+			}else {
+				ShootingScript.rifleRounds = 30;
+			}
+
+
+
 		}
+
+
+		if (animation.IsPlaying (reloadAnimation)) {
+			ShootingScript.reloading = true;
+		} else {
+			ShootingScript.reloading = false;
+		}
+
+
 
 		if (!animation.IsPlaying (downAnimation)) {
 			animation.PlayQueued (idleAnim);

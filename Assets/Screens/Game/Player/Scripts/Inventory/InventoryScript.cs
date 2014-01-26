@@ -17,7 +17,7 @@ public class InventoryScript : MonoBehaviour {
 		
 		shootScript =GameObject.Find("PlayerObject").GetComponent("ShootingScript") as ShootingScript;
 		pickedupPrimary = true;
-		pickedupSecondary = true;
+		pickedupSecondary = false;
 
 		currentWeapon = 0;
 		changing =downGun=downRifle=upRifle=upGun=toggled= false;
@@ -37,7 +37,7 @@ public class InventoryScript : MonoBehaviour {
 					weaponArray[1].gameObject.SendMessage("playDown");
 					currentWeapon = 0;
 					changing = true;
-
+					ShootingScript.shootDistance = 19f;
 
 					//weaponArray[0].gameObject.SetActive(true);
 					//weaponArray[1].gameObject.SetActive(false);
@@ -60,6 +60,7 @@ public class InventoryScript : MonoBehaviour {
 				
 					currentWeapon = 1;
 					changing = true;
+					ShootingScript.shootDistance = 38f;
 
 					//weaponArray[1].gameObject.SetActive(true);
 					//weaponArray[0].gameObject.SetActive(false);
