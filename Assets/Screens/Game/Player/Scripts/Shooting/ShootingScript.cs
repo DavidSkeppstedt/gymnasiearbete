@@ -6,8 +6,8 @@ public class ShootingScript : MonoBehaviour {
 	
 	private GameObject door;
 	public GameObject sparkWall;
-	public AudioClip weaponSound;
-
+	public AudioClip rifleSound,gunSound,outofrounds;
+	public GameObject muzzleFlash,rifleFlash;
 	private bool canShoot = true;
 	private bool changeWeapon = false;
 	private GameObject gun;
@@ -50,7 +50,7 @@ public class ShootingScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		
+	
 		RaycastHit hit;
 
 		Vector3 fwd = transform.TransformDirection(gun.transform.forward);
@@ -63,8 +63,13 @@ public class ShootingScript : MonoBehaviour {
 
 			if (InventoryScript.currentWeapon == 0) {
 				rounds -=1;
+				audio.PlayOneShot(gunSound);
+				StartCoroutine(muzzleOn());
+
 			}else {
 				rifleRounds -=1; 
+				audio.PlayOneShot(rifleSound);
+				StartCoroutine(rifleFlashOn());
 			}
 
 			canShoot = false;
@@ -76,6 +81,12 @@ public class ShootingScript : MonoBehaviour {
 					shoot(hit.collider,hit.point);
 
 			}
+		}
+
+
+		if (Input.GetButtonDown("Fire1") && (rounds <= 0 && InventoryScript.currentWeapon == 0 || rifleRounds <= 0 && InventoryScript.currentWeapon == 1)) {
+
+			audio.PlayOneShot(outofrounds);
 		}
 
 		if (countDown) {
@@ -128,7 +139,20 @@ public class ShootingScript : MonoBehaviour {
 		
 		
 	}
-	
+
+	IEnumerator muzzleOn() {
+
+		muzzleFlash.SetActive (true);
+		yield return new WaitForSeconds(0.1f);
+		muzzleFlash.SetActive (false);
+	}
+
+	IEnumerator rifleFlashOn() {
+		
+		rifleFlash.SetActive (true);
+		yield return new WaitForSeconds(0.1f);
+		rifleFlash.SetActive (false);
+	}
 	
 	
 	

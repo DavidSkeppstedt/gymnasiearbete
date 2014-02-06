@@ -9,6 +9,7 @@ public class AnimationGun : MonoBehaviour {
 	public string downAnimation;
 	public string reloadAnimation;
 
+
 	// Use this for initialization
 	void Start () {
 	
@@ -28,7 +29,7 @@ public class AnimationGun : MonoBehaviour {
 
 		if (Input.GetKey (KeyCode.R) && !animation.IsPlaying(upAnimation) && !animation.IsPlaying (downAnimation)) {
 			animation.Play(reloadAnimation,PlayMode.StopAll);
-
+			audio.Play ();
 
 			if (InventoryScript.currentWeapon == 0) {
 				ShootingScript.rounds = 15;
