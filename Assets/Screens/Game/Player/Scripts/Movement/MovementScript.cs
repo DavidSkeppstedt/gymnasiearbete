@@ -19,6 +19,7 @@ public class MovementScript : MonoBehaviour {
 	private float oldR;
 	private float oldH;
 	private float oldCY;
+	private bool canJump = true;
 	// Use this for initialization
 	void Start () {
 		//Init the variables
@@ -40,18 +41,19 @@ public class MovementScript : MonoBehaviour {
 	void Update () {
 		
 		rotateHead();
-	}
-	//This method is called once every fixed frame. Used for physics calculation
-	void FixedUpdate() {
-		
-		
-		
 
+
+		
 		cc.Move(checkKeyInput()* Time.deltaTime);
 		crouch();
-		
-		
+
 	}
+
+
+
+		
+
+
 
 	private void crouch(){
 		if (Input.GetButton("Crouch")) {
@@ -64,8 +66,8 @@ public class MovementScript : MonoBehaviour {
 			if (cc.height != oldH) {
 			cc.height = oldH;
 			cc.radius = oldR;
-			Camera.main.transform.localPosition = new Vector3(0,0,0);
-			transform.position = new Vector3(transform.position.x,transform.position.y +0.3f,transform.position.z);
+			//Camera.main.transform.localPosition = new Vector3(0,0,0);
+			transform.position = new Vector3(transform.position.x,transform.position.y +0.105f,transform.position.z);
 			}
 
 		}
@@ -92,13 +94,20 @@ public class MovementScript : MonoBehaviour {
 				0,
 				Input.GetAxis("Vertical")*moveSpeed
 				);
+
 			moveVector = transform.TransformDirection(moveVector);
-			if (Input.GetButton("Jump")) {
+
+			if (Input.GetButtonDown("Jump")) {
 				moveVector.y = 2;
+
+				
 			}
 			
 		}
-		
+
+
+
+
 		moveVector.y += Physics.gravity.y *Time.deltaTime;
 		
 		return moveVector;

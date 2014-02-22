@@ -17,6 +17,7 @@ public class SimpleAi : MonoBehaviour {
 
 	private int p = 3;
 	private bool canShoot = true;
+	private bool isShooting = false;
 	private float timer = 1;
 	private bool shouldMove = false;
 	
@@ -36,7 +37,10 @@ public class SimpleAi : MonoBehaviour {
 		cc = GetComponent<CharacterController>();
 	
 	}
-	
+
+	public bool isAttacking() {
+		return isShooting;
+	}
 	
 	void takeHit() {
 		
@@ -70,11 +74,11 @@ public class SimpleAi : MonoBehaviour {
 			moveDirection = transform.forward;
 			moveDirection *=moveSpeed*2;
 			cc.SimpleMove(moveDirection);
-			Debug.Log("Run Towards");
+			//Debug.Log("Run Towards");
 		}
 
 		if (shouldRun && canSee) {
-			Debug.Log("Run");
+			//Debug.Log("Run");
 			moveDirection = target.transform.forward;
 			moveDirection *=moveSpeed;
 			cc.SimpleMove(moveDirection);
@@ -118,13 +122,14 @@ public class SimpleAi : MonoBehaviour {
 
 
 			if (distanceToPlayer < attackRange && distanceToPlayer > runDistance && canSee) {
-				Debug.Log("Attack");
+			//	Debug.Log("Attack");
 				shouldShoot = true;	
 				shouldMove = false;
 				shouldRun = false;
 				attack();
 			}else {
 				shouldShoot = false;
+				isShooting = false;
 			}
 			if (distanceToPlayer < runDistance && canSee) {
 				shouldMove = false;
@@ -190,7 +195,7 @@ public class SimpleAi : MonoBehaviour {
 		if (shouldShoot && canSee) {
 			if (canShoot) {
 				//Shoot here!
-
+				isShooting = true;
 				//renderer.material.color = Color.blue;
 				target.gameObject.SendMessage("LoseHealth",6);
 				canShoot = false;
@@ -199,9 +204,11 @@ public class SimpleAi : MonoBehaviour {
 				if (timer > 0) {
 					//Debug.Log(timer);
 					timer -= Time.deltaTime;
+
 					
 				}else {
 					canShoot = true;
+
 				}
 	
 			}
