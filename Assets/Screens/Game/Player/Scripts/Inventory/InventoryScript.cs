@@ -65,7 +65,7 @@ public class InventoryScript : MonoBehaviour {
 					//weaponArray[1].gameObject.SetActive(true);
 					//weaponArray[0].gameObject.SetActive(false);
 
-					Debug.Log("Change to seconday" + (1.0f / Time.deltaTime));
+//					Debug.Log("Change to seconday" + (1.0f / Time.deltaTime));
 				}
 			}
 			

@@ -21,7 +21,7 @@ public class PickupScript : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider other) {
-		Debug.Log("index" + index);
+//		Debug.Log("index" + index);
         
 		other.SendMessage("pickUp",index);
 		Destroy(this.gameObject);

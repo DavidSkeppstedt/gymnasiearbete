@@ -98,7 +98,7 @@ public class MovementScript : MonoBehaviour {
 			moveVector = transform.TransformDirection(moveVector);
 
 			if (Input.GetButtonDown("Jump")) {
-				moveVector.y = 2;
+				moveVector.y = 4;
 
 				
 			}
