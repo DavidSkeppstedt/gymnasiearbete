@@ -9,6 +9,7 @@ public class AnimationGun : MonoBehaviour {
 	public string downAnimation;
 	public string reloadAnimation;
 
+	public GameObject player;
 
 	// Use this for initialization
 	void Start () {
@@ -18,13 +19,28 @@ public class AnimationGun : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
+		if (InventoryScript.currentWeapon == 0 ) {
+		if (Input.GetButtonDown ("Fire1") && (ShootingScript.rounds > 0 && InventoryScript.currentWeapon == 0 || ShootingScript.rifleRounds > 0 && InventoryScript.currentWeapon == 1)) {
 
-		if (Input.GetButton ("Fire1") && (ShootingScript.rounds > 0 && InventoryScript.currentWeapon == 0 || ShootingScript.rifleRounds > 0 && InventoryScript.currentWeapon == 1)) {
-
-			if (!animation.IsPlaying(reloadAnimation) && !animation.IsPlaying(upAnimation) && !animation.IsPlaying (downAnimation)) {
+			if (!animation.IsPlaying(reloadAnimation) && !animation.IsPlaying(upAnimation) && !animation.IsPlaying (downAnimation) && !animation.IsPlaying(fireAnim)) {
 				animation.Play(fireAnim,PlayMode.StopAll);
+				player.SendMessage("ShootGun");
 			}
 		}
+		}
+
+		if (InventoryScript.currentWeapon == 1 ) {
+			if (Input.GetButton ("Fire1") && (ShootingScript.rounds > 0 && InventoryScript.currentWeapon == 0 || ShootingScript.rifleRounds > 0 && InventoryScript.currentWeapon == 1)) {
+				
+				if (!animation.IsPlaying(reloadAnimation) && !animation.IsPlaying(upAnimation) && !animation.IsPlaying (downAnimation) &&!animation.IsPlaying(fireAnim)) {
+					animation.Play(fireAnim,PlayMode.StopAll);
+					player.SendMessage("ShootRifle");
+				}
+			}
+		}
+
+
+
 
 
 		if (Input.GetKey (KeyCode.R) && !animation.IsPlaying(upAnimation) && !animation.IsPlaying (downAnimation)) {

@@ -15108,6 +15108,14 @@ Prefab:
       propertyPath: gun
       value: 
       objectReference: {fileID: 2800000, guid: fc9a0d947d416654fac690960c8e7c47, type: 3}
+    - target: {fileID: 11400010, guid: 373b258498ee8ef459608041e6d05449, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 10797371}
+    - target: {fileID: 11400008, guid: 373b258498ee8ef459608041e6d05449, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 10797371}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 373b258498ee8ef459608041e6d05449, type: 2}
   m_RootGameObject: {fileID: 10797371}
@@ -18539,7 +18547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!108 &810699463
 Light:
   m_ObjectHideFlags: 0
@@ -22126,6 +22134,7 @@ MonoBehaviour:
   upAnimation: Rifle_Up
   downAnimation: Rifle_Down
   reloadAnimation: Rifle_Reload
+  player: {fileID: 10797371}
 --- !u!82 &978676069
 AudioSource:
   m_ObjectHideFlags: 0
@@ -34728,6 +34737,7 @@ MonoBehaviour:
   upAnimation: Pistol_Up
   downAnimation: Pistol_Down
   reloadAnimation: Pistol_Reload
+  player: {fileID: 10797371}
 --- !u!82 &1490394103
 AudioSource:
   m_ObjectHideFlags: 0

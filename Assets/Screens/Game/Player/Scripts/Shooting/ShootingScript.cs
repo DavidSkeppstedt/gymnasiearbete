@@ -19,15 +19,17 @@ public class ShootingScript : MonoBehaviour {
 	public static int rounds = 15;
 	public static int rifleRounds = 30;
 
-	//public Rigidbody grenade;
-	private GameObject uiGrenade;
+
+
+
+
 	
 	// Use this for initialization
 	void Start () {
 		gun = GameObject.Find("Gun");
 		Screen.lockCursor = true;
 		door = GameObject.Find("Level");
-		uiGrenade = GameObject.Find("Grenade");
+
 	}
 	
 	
@@ -46,21 +48,75 @@ public class ShootingScript : MonoBehaviour {
 
 	}
 
-	
-	// Update is called once per frame
-	void Update () {
 
-	
+
+
+
+	public void ShootGun() {
 		RaycastHit hit;
-
+		
 		Vector3 fwd = transform.TransformDirection(gun.transform.forward);
 		Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width*0.5f,Screen.height*0.5f,0));
 		int layerMask = 1<<9;
 		layerMask =~layerMask;
+	
 
 
-		if (Input.GetButton("Fire1") && canShoot && !changeWeapon && (rounds > 0 && InventoryScript.currentWeapon == 0 || rifleRounds > 0 && InventoryScript.currentWeapon == 1) && !reloading) {
 
+		rounds -=1;
+		audio.PlayOneShot(gunSound);
+		StartCoroutine(muzzleOn());
+
+		canShoot = false;
+		countDown = true;
+
+		if (Physics.Raycast(ray,out hit, shootDistance,layerMask)) {
+			Debug.DrawLine(gun.transform.position,hit.point);
+			shoot(hit.collider,hit.point);
+			
+		}
+
+	}
+
+
+	public void ShootRifle() {
+		RaycastHit hit;
+		
+		Vector3 fwd = transform.TransformDirection(gun.transform.forward);
+		Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width*0.5f,Screen.height*0.5f,0));
+		int layerMask = 1<<9;
+		layerMask =~layerMask;
+		
+		
+		
+		rifleRounds -=1; 
+		audio.PlayOneShot(rifleSound);
+		StartCoroutine(rifleFlashOn());
+
+		canShoot = false;
+		countDown = true;
+		
+		if (Physics.Raycast(ray,out hit, shootDistance,layerMask)) {
+			Debug.DrawLine(gun.transform.position,hit.point);
+			shoot(hit.collider,hit.point);
+			
+		}
+
+		
+	}
+
+
+
+	// Update is called once per frame
+	void Update () {
+
+		/*
+
+
+		if (Input.GetButtonDown("Fire1") && canShoot && !changeWeapon && (rounds > 0 && InventoryScript.currentWeapon == 0 || rifleRounds > 0 && InventoryScript.currentWeapon == 1) && !reloading) {
+
+			ShootGun();
+			/*
 			if (InventoryScript.currentWeapon == 0) {
 				rounds -=1;
 				audio.PlayOneShot(gunSound);
@@ -80,8 +136,19 @@ public class ShootingScript : MonoBehaviour {
 				Debug.DrawLine(gun.transform.position,hit.point);
 					shoot(hit.collider,hit.point);
 
+			}*/
+		//}
+
+		/*
+		if (Input.GetButtonDown ("Fire1") && canShoot && !changeWeapon && (rounds > 0 && InventoryScript.currentWeapon == 0 || rifleRounds > 0 && InventoryScript.currentWeapon == 1) && !reloading) {
+			if (InventoryScript.currentWeapon == 0) {
+				audio.PlayOneShot(gunSound);
 			}
-		}
+		
+		}*/
+
+
+
 
 
 		if (Input.GetButtonDown("Fire1") && (rounds <= 0 && InventoryScript.currentWeapon == 0 || rifleRounds <= 0 && InventoryScript.currentWeapon == 1)) {
@@ -107,31 +174,10 @@ public class ShootingScript : MonoBehaviour {
 	// Here we check what is shot
 	private void shoot(Collider collider,Vector3 hit) {
 
-
+		//Instansierar hitsparks
 		GameObject clone = Instantiate(sparkWall, hit, collider.transform.rotation) as GameObject;
 
-		if (collider.name == "Cube") {
-			pulseGun(hit,collider);		
-		}
-
-		if (collider.transform.root.gameObject.name == "MAP2" || 
-		    collider.transform.root.gameObject.name == "DoorController" ) {
-
-			//instantiate a particle object at the position of the hit
-			//GameObject clone = Instantiate(sparkWall, hit, collider.transform.rotation) as GameObject;
-
-
-
-
-
-		}
-
-
-
-		if (collider.name == "Sphere_1") {
-			door.SendMessage("OpenDoor");
-		}
-		
+		//Skickar ett meddelande till finde entitn att den skadas och på så vis exeveras kod hos den.
 		if (collider.name == "Enemy") {
 			collider.SendMessage("takeHit");
 		}
@@ -156,18 +202,6 @@ public class ShootingScript : MonoBehaviour {
 	
 	
 	
-	//Here we apply wich gun we want,
-	
-	//This is the pulseGun!
-	private void pulseGun(Vector3 hit, Collider collider) {
-		
-		Rigidbody r= collider.rigidbody;
-		r.AddTorque(hit*150,ForceMode.Impulse);
-		r.AddForceAtPosition(2000*transform.forward,hit);
-	}	
-	
-	
-	
-	
+
 	
 }
