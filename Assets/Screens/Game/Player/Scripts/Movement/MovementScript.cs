@@ -6,7 +6,7 @@ public class MovementScript : MonoBehaviour {
 	
 	//Declare variabler
 	private CharacterController cc;
-	private Camera camera;
+	protected Camera camera;
 	public float moveSpeed = 4.8f;
 	public float mouseSensitivty = 225f;
 	
@@ -19,7 +19,7 @@ public class MovementScript : MonoBehaviour {
 	private float oldR;
 	private float oldH;
 	private float oldCY;
-	private bool canJump = true;
+	//private bool canJump = true;
 	// Use this for initialization
 	void Start () {
 		//Init the variables
@@ -28,18 +28,21 @@ public class MovementScript : MonoBehaviour {
 		camera = GetComponentInChildren<Camera>(); // The main fps camera
 		//Hide the cursor
 		Screen.showCursor = false;
-
+		Screen.lockCursor = true;
 		oldR =cc.radius; 
 		oldH = cc.height;
 		oldCY = Camera.main.transform.position.y;
-
+		mouseSensitivty *= MenuStateHandler.MOUSE_SENS;
 
 		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+		mouseSensitivty = 225*MenuStateHandler.MOUSE_SENS;
+
+
 		rotateHead();
 
 
