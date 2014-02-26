@@ -7,7 +7,7 @@ public class SettingsGUI : MonoBehaviour {
 	void OnGUI() {
 		GUI.skin = skin;
 		GUI.depth = 0;
-		if (GUI.Button (new Rect (Screen.width / 2 -950 , Screen.height / 2 - 60, 768, 109), "")) {
+		if (GUI.Button (new Rect (Screen.width / 2 -ScaleUtil.ScaleX(950) , Screen.height / 2 - ScaleUtil.ScaleY(60), ScaleUtil.ScaleX(768), ScaleUtil.ScaleY(109)), "")) {
 			//Application.LoadLevel(1);
 			if (MenuStateHandler.state != MenuStateHandler.States.OPTIONS) {
 				MenuStateHandler.state = MenuStateHandler.States.OPTIONS;

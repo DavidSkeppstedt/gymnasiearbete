@@ -8,7 +8,7 @@ public class HealthScript : MonoBehaviour {
 	public GUIText HP_UI,HUD_ROUNDS;
 	public GUITexture HUD_WEAP;
 	public Texture rif,gun;
-
+	public AudioClip playerhit;
 	
 	// Use this for initialization
 	void Start () {
@@ -40,7 +40,7 @@ public class HealthScript : MonoBehaviour {
 		Health -=hp;
 		//Debug.Log("I am hit! - " + Health);
 		HP_UI.text =""+Health;
-		
+		audio.PlayOneShot (playerhit);
 		
 	}
 	

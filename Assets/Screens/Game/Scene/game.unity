@@ -13,12 +13,12 @@ SceneSettings:
 --- !u!104 &2
 RenderSettings:
   m_Fog: 0
-  m_FogColor: {r: 0, g: 0, b: 0, a: 1}
-  m_FogMode: 1
-  m_FogDensity: 1
-  m_LinearFogStart: 30
+  m_FogColor: {r: .0514705777, g: .0514705777, b: .0514705777, a: 1}
+  m_FogMode: 2
+  m_FogDensity: .100000001
+  m_LinearFogStart: 31.8400002
   m_LinearFogEnd: 150
-  m_AmbientLight: {r: .0235294122, g: .0235294122, b: .0235294122, a: 1}
+  m_AmbientLight: {r: .0156862754, g: .0156862754, b: .0156862754, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 30b7d863784c44a42a8a986a786718aa, type: 2}
   m_HaloStrength: .5
   m_FlareStrength: 1
@@ -221,7 +221,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: .100000001
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -302,6 +302,7 @@ MonoBehaviour:
   HUD_WEAP: {fileID: 1081876213}
   rif: {fileID: 2800000, guid: 4d2b08029de1d8d43828170ed7f01a90, type: 3}
   gun: {fileID: 2800000, guid: fc9a0d947d416654fac690960c8e7c47, type: 3}
+  playerhit: {fileID: 8300000, guid: c370fa84f55b1474594a4aa94add7816, type: 3}
 --- !u!1 &12155645
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,6 +685,7 @@ GameObject:
   - 4: {fileID: 36550799}
   - 65: {fileID: 36550801}
   - 114: {fileID: 36550800}
+  - 82: {fileID: 36550802}
   m_Layer: 9
   m_Name: DoorCont_4
   m_TagString: Untagged
@@ -717,6 +719,8 @@ MonoBehaviour:
   map: {fileID: 1920525148}
   open: DOOR4_OPEN
   close: DOOR4_CLOSE
+  open_door: {fileID: 8300000, guid: ed49c95e6f6c4374a8c728dec30ac331, type: 3}
+  close_door: {fileID: 8300000, guid: c1c2a3b0c42d851488511a36fa2e7be7, type: 3}
 --- !u!65 &36550801
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -730,6 +734,64 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.43000007, y: 2.42000008, z: 4.76951456}
   m_Center: {x: 0, y: 0, z: -.199749947}
+--- !u!82 &36550802
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 36550798}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &37621056
 GameObject:
   m_ObjectHideFlags: 0
@@ -4551,6 +4613,14 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
+      propertyPath: open_door
+      value: 
+      objectReference: {fileID: 8300000, guid: ed49c95e6f6c4374a8c728dec30ac331, type: 3}
+    - target: {fileID: 11400000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
+      propertyPath: close_door
+      value: 
+      objectReference: {fileID: 8300000, guid: c1c2a3b0c42d851488511a36fa2e7be7, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
   m_RootGameObject: {fileID: 1256463802}
@@ -5108,6 +5178,7 @@ GameObject:
   - 4: {fileID: 253448534}
   - 65: {fileID: 253448536}
   - 114: {fileID: 253448535}
+  - 82: {fileID: 253448537}
   m_Layer: 9
   m_Name: DoorCont_12
   m_TagString: Untagged
@@ -5141,6 +5212,8 @@ MonoBehaviour:
   map: {fileID: 1920525148}
   open: DOOR12_OPEN
   close: DOOR12_CLOSE
+  open_door: {fileID: 8300000, guid: ed49c95e6f6c4374a8c728dec30ac331, type: 3}
+  close_door: {fileID: 8300000, guid: c1c2a3b0c42d851488511a36fa2e7be7, type: 3}
 --- !u!65 &253448536
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5154,6 +5227,64 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.53739452, y: 2.42000008, z: 3.6036377}
   m_Center: {x: -.216197968, y: 0, z: -.120695114}
+--- !u!82 &253448537
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 253448533}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &255014687
 GameObject:
   m_ObjectHideFlags: 0
@@ -8695,6 +8826,7 @@ GameObject:
   - 4: {fileID: 401828508}
   - 65: {fileID: 401828510}
   - 114: {fileID: 401828509}
+  - 82: {fileID: 401828511}
   m_Layer: 9
   m_Name: DoorCont_5
   m_TagString: Untagged
@@ -8728,6 +8860,8 @@ MonoBehaviour:
   map: {fileID: 1920525148}
   open: DOOR5_OPEN
   close: DOOR5_CLOSE
+  open_door: {fileID: 8300000, guid: ed49c95e6f6c4374a8c728dec30ac331, type: 3}
+  close_door: {fileID: 8300000, guid: c1c2a3b0c42d851488511a36fa2e7be7, type: 3}
 --- !u!65 &401828510
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8741,6 +8875,64 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.53739452, y: 2.42000008, z: 3.6036377}
   m_Center: {x: -.216197968, y: 0, z: -.120695114}
+--- !u!82 &401828511
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 401828507}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &402120154
 GameObject:
   m_ObjectHideFlags: 0
@@ -10000,6 +10192,7 @@ GameObject:
   - 4: {fileID: 466087825}
   - 65: {fileID: 466087827}
   - 114: {fileID: 466087826}
+  - 82: {fileID: 466087828}
   m_Layer: 9
   m_Name: DoorCont_3
   m_TagString: Untagged
@@ -10033,6 +10226,8 @@ MonoBehaviour:
   map: {fileID: 1920525148}
   open: DOOR3_OPEN
   close: DOOR3_CLOSE
+  open_door: {fileID: 8300000, guid: ed49c95e6f6c4374a8c728dec30ac331, type: 3}
+  close_door: {fileID: 8300000, guid: c1c2a3b0c42d851488511a36fa2e7be7, type: 3}
 --- !u!65 &466087827
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10046,6 +10241,64 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.43000007, y: 2.42000008, z: 4.76951456}
   m_Center: {x: 0, y: 0, z: -.199749947}
+--- !u!82 &466087828
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 466087824}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &467516365
 GameObject:
   m_ObjectHideFlags: 0
@@ -11379,6 +11632,14 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
+      propertyPath: open_door
+      value: 
+      objectReference: {fileID: 8300000, guid: ed49c95e6f6c4374a8c728dec30ac331, type: 3}
+    - target: {fileID: 11400000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
+      propertyPath: close_door
+      value: 
+      objectReference: {fileID: 8300000, guid: c1c2a3b0c42d851488511a36fa2e7be7, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
   m_RootGameObject: {fileID: 401828507}
@@ -11455,6 +11716,14 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
+      propertyPath: open_door
+      value: 
+      objectReference: {fileID: 8300000, guid: ed49c95e6f6c4374a8c728dec30ac331, type: 3}
+    - target: {fileID: 11400000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
+      propertyPath: close_door
+      value: 
+      objectReference: {fileID: 8300000, guid: c1c2a3b0c42d851488511a36fa2e7be7, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
   m_RootGameObject: {fileID: 2136727769}
@@ -15392,6 +15661,62 @@ Prefab:
       propertyPath: maxSize
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8200002, guid: 373b258498ee8ef459608041e6d05449, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: a88a7eea62ffb304e8933ac3bc48b520, type: 3}
+    - target: {fileID: 11400006, guid: 373b258498ee8ef459608041e6d05449, type: 2}
+      propertyPath: playerhit
+      value: 
+      objectReference: {fileID: 8300000, guid: c370fa84f55b1474594a4aa94add7816, type: 3}
+    - target: {fileID: 8200000, guid: 373b258498ee8ef459608041e6d05449, type: 2}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 10800000, guid: 373b258498ee8ef459608041e6d05449, type: 2}
+      propertyPath: m_Range
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 400222, guid: 373b258498ee8ef459608041e6d05449, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: .0216335561
+      objectReference: {fileID: 0}
+    - target: {fileID: 400222, guid: 373b258498ee8ef459608041e6d05449, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 6.75991796e-16
+      objectReference: {fileID: 0}
+    - target: {fileID: 400222, guid: 373b258498ee8ef459608041e6d05449, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -1.42267495e-16
+      objectReference: {fileID: 0}
+    - target: {fileID: 400222, guid: 373b258498ee8ef459608041e6d05449, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .999765992
+      objectReference: {fileID: 0}
+    - target: {fileID: 400222, guid: 373b258498ee8ef459608041e6d05449, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -.779519856
+      objectReference: {fileID: 0}
+    - target: {fileID: 100140, guid: 373b258498ee8ef459608041e6d05449, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400222, guid: 373b258498ee8ef459608041e6d05449, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: .82614398
+      objectReference: {fileID: 0}
+    - target: {fileID: 400222, guid: 373b258498ee8ef459608041e6d05449, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -16.8623962
+      objectReference: {fileID: 0}
+    - target: {fileID: 10800000, guid: 373b258498ee8ef459608041e6d05449, type: 2}
+      propertyPath: m_Intensity
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 10800000, guid: 373b258498ee8ef459608041e6d05449, type: 2}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 373b258498ee8ef459608041e6d05449, type: 2}
   m_RootGameObject: {fileID: 10797371}
@@ -15414,7 +15739,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &678451672
 Transform:
   m_ObjectHideFlags: 0
@@ -16054,6 +16379,14 @@ Prefab:
       propertyPath: m_Center.x
       value: .133953571
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
+      propertyPath: open_door
+      value: 
+      objectReference: {fileID: 8300000, guid: ed49c95e6f6c4374a8c728dec30ac331, type: 3}
+    - target: {fileID: 11400000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
+      propertyPath: close_door
+      value: 
+      objectReference: {fileID: 8300000, guid: c1c2a3b0c42d851488511a36fa2e7be7, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
   m_RootGameObject: {fileID: 1600608062}
@@ -18918,7 +19251,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &810699463
 Light:
   m_ObjectHideFlags: 0
@@ -20622,6 +20955,14 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
+      propertyPath: open_door
+      value: 
+      objectReference: {fileID: 8300000, guid: ed49c95e6f6c4374a8c728dec30ac331, type: 3}
+    - target: {fileID: 11400000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
+      propertyPath: close_door
+      value: 
+      objectReference: {fileID: 8300000, guid: c1c2a3b0c42d851488511a36fa2e7be7, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
   m_RootGameObject: {fileID: 253448533}
@@ -23000,7 +23341,7 @@ AudioSource:
   m_GameObject: {fileID: 978676065}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: a100516a5f0f2414a863aa8330a965b6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a88a7eea62ffb304e8933ac3bc48b520, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -24757,6 +25098,7 @@ GameObject:
   - 4: {fileID: 1052303357}
   - 65: {fileID: 1052303359}
   - 114: {fileID: 1052303358}
+  - 82: {fileID: 1052303360}
   m_Layer: 9
   m_Name: DoorCont_10
   m_TagString: Untagged
@@ -24790,6 +25132,8 @@ MonoBehaviour:
   map: {fileID: 1920525148}
   open: DOOR10_OPEN
   close: DOOR10_CLOSE
+  open_door: {fileID: 8300000, guid: ed49c95e6f6c4374a8c728dec30ac331, type: 3}
+  close_door: {fileID: 8300000, guid: c1c2a3b0c42d851488511a36fa2e7be7, type: 3}
 --- !u!65 &1052303359
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24803,6 +25147,64 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.53739452, y: 2.42000008, z: 3.6036377}
   m_Center: {x: -.216197968, y: 0, z: -.120695114}
+--- !u!82 &1052303360
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1052303356}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1054565815
 GameObject:
   m_ObjectHideFlags: 0
@@ -25215,8 +25617,8 @@ Transform:
   m_PrefabParentObject: {fileID: 400222, guid: 373b258498ee8ef459608041e6d05449, type: 2}
   m_PrefabInternal: {fileID: 677560246}
   m_GameObject: {fileID: 1069748618}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.0197524e-14, y: 0, z: -31.2999992}
+  m_LocalRotation: {x: .0216335561, y: 6.75991796e-16, z: -1.42267495e-16, w: .999765992}
+  m_LocalPosition: {x: -.779519856, y: .82614398, z: -16.8623962}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1150769040}
@@ -25231,7 +25633,7 @@ Light:
   serializedVersion: 3
   m_Type: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.5999999
+  m_Intensity: 3
   m_Range: 15
   m_SpotAngle: 30.3999996
   m_CookieSize: 10
@@ -29431,6 +29833,7 @@ GameObject:
   - 4: {fileID: 1256463803}
   - 65: {fileID: 1256463805}
   - 114: {fileID: 1256463804}
+  - 82: {fileID: 1256463806}
   m_Layer: 9
   m_Name: DoorCont_9
   m_TagString: Untagged
@@ -29464,6 +29867,8 @@ MonoBehaviour:
   map: {fileID: 1920525148}
   open: DOOR9_OPEN
   close: DOOR9_CLOSE
+  open_door: {fileID: 8300000, guid: ed49c95e6f6c4374a8c728dec30ac331, type: 3}
+  close_door: {fileID: 8300000, guid: c1c2a3b0c42d851488511a36fa2e7be7, type: 3}
 --- !u!65 &1256463805
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29477,6 +29882,64 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.53739452, y: 2.42000008, z: 3.6036377}
   m_Center: {x: -.216197968, y: 0, z: -.120695114}
+--- !u!82 &1256463806
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1256463802}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1257577306
 GameObject:
   m_ObjectHideFlags: 0
@@ -29995,6 +30458,14 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
+      propertyPath: open_door
+      value: 
+      objectReference: {fileID: 8300000, guid: ed49c95e6f6c4374a8c728dec30ac331, type: 3}
+    - target: {fileID: 11400000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
+      propertyPath: close_door
+      value: 
+      objectReference: {fileID: 8300000, guid: c1c2a3b0c42d851488511a36fa2e7be7, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
   m_RootGameObject: {fileID: 466087824}
@@ -35743,6 +36214,14 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
+      propertyPath: open_door
+      value: 
+      objectReference: {fileID: 8300000, guid: ed49c95e6f6c4374a8c728dec30ac331, type: 3}
+    - target: {fileID: 11400000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
+      propertyPath: close_door
+      value: 
+      objectReference: {fileID: 8300000, guid: c1c2a3b0c42d851488511a36fa2e7be7, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
   m_RootGameObject: {fileID: 1835448461}
@@ -37185,6 +37664,7 @@ GameObject:
   - 4: {fileID: 1600608065}
   - 65: {fileID: 1600608064}
   - 114: {fileID: 1600608063}
+  - 82: {fileID: 1600608066}
   m_Layer: 9
   m_Name: DoorCont_1
   m_TagString: Untagged
@@ -37207,6 +37687,8 @@ MonoBehaviour:
   map: {fileID: 1920525148}
   open: DOOR1_OPEN
   close: DOOR1_CLOSE
+  open_door: {fileID: 8300000, guid: ed49c95e6f6c4374a8c728dec30ac331, type: 3}
+  close_door: {fileID: 8300000, guid: c1c2a3b0c42d851488511a36fa2e7be7, type: 3}
 --- !u!65 &1600608064
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37231,6 +37713,64 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1992746714}
+--- !u!82 &1600608066
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1600608062}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1601982723
 GameObject:
   m_ObjectHideFlags: 0
@@ -39691,6 +40231,14 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
+      propertyPath: open_door
+      value: 
+      objectReference: {fileID: 8300000, guid: ed49c95e6f6c4374a8c728dec30ac331, type: 3}
+    - target: {fileID: 11400000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
+      propertyPath: close_door
+      value: 
+      objectReference: {fileID: 8300000, guid: c1c2a3b0c42d851488511a36fa2e7be7, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
   m_RootGameObject: {fileID: 2143696117}
@@ -41463,6 +42011,14 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
+      propertyPath: open_door
+      value: 
+      objectReference: {fileID: 8300000, guid: ed49c95e6f6c4374a8c728dec30ac331, type: 3}
+    - target: {fileID: 11400000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
+      propertyPath: close_door
+      value: 
+      objectReference: {fileID: 8300000, guid: c1c2a3b0c42d851488511a36fa2e7be7, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
   m_RootGameObject: {fileID: 36550798}
@@ -42946,6 +43502,7 @@ GameObject:
   - 4: {fileID: 1835448462}
   - 65: {fileID: 1835448464}
   - 114: {fileID: 1835448463}
+  - 82: {fileID: 1835448465}
   m_Layer: 9
   m_Name: DoorCont_7
   m_TagString: Untagged
@@ -42979,6 +43536,8 @@ MonoBehaviour:
   map: {fileID: 1920525148}
   open: DOOR7_OPEN
   close: DOOR7_CLOSE
+  open_door: {fileID: 8300000, guid: ed49c95e6f6c4374a8c728dec30ac331, type: 3}
+  close_door: {fileID: 8300000, guid: c1c2a3b0c42d851488511a36fa2e7be7, type: 3}
 --- !u!65 &1835448464
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42992,6 +43551,64 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8.95759201, y: 2.42000008, z: 4.73532724}
   m_Center: {x: -.253383636, y: 0, z: .00593566895}
+--- !u!82 &1835448465
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1835448461}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &1837978255
 GameObject:
   m_ObjectHideFlags: 0
@@ -46330,6 +46947,14 @@ Prefab:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
+      propertyPath: open_door
+      value: 
+      objectReference: {fileID: 8300000, guid: ed49c95e6f6c4374a8c728dec30ac331, type: 3}
+    - target: {fileID: 11400000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
+      propertyPath: close_door
+      value: 
+      objectReference: {fileID: 8300000, guid: c1c2a3b0c42d851488511a36fa2e7be7, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d15e2c4db60b8a7489993f7770dd30f8, type: 2}
   m_RootGameObject: {fileID: 1052303356}
@@ -49367,6 +49992,7 @@ GameObject:
   - 4: {fileID: 2136727770}
   - 65: {fileID: 2136727772}
   - 114: {fileID: 2136727771}
+  - 82: {fileID: 2136727773}
   m_Layer: 9
   m_Name: DoorCont_2
   m_TagString: Untagged
@@ -49400,6 +50026,8 @@ MonoBehaviour:
   map: {fileID: 1920525148}
   open: DOOR2_OPEN
   close: DOOR2_CLOSE
+  open_door: {fileID: 8300000, guid: ed49c95e6f6c4374a8c728dec30ac331, type: 3}
+  close_door: {fileID: 8300000, guid: c1c2a3b0c42d851488511a36fa2e7be7, type: 3}
 --- !u!65 &2136727772
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49413,6 +50041,64 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3.43000007, y: 2.42000008, z: 4.76951456}
   m_Center: {x: 0, y: 0, z: -.199749947}
+--- !u!82 &2136727773
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2136727769}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &2138617341
 GameObject:
   m_ObjectHideFlags: 0
@@ -49585,6 +50271,7 @@ GameObject:
   - 4: {fileID: 2143696118}
   - 65: {fileID: 2143696120}
   - 114: {fileID: 2143696119}
+  - 82: {fileID: 2143696121}
   m_Layer: 9
   m_Name: DoorCont_8
   m_TagString: Untagged
@@ -49618,6 +50305,8 @@ MonoBehaviour:
   map: {fileID: 1920525148}
   open: DOOR8_OPEN
   close: DOOR8_CLOSE
+  open_door: {fileID: 8300000, guid: ed49c95e6f6c4374a8c728dec30ac331, type: 3}
+  close_door: {fileID: 8300000, guid: c1c2a3b0c42d851488511a36fa2e7be7, type: 3}
 --- !u!65 &2143696120
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49631,6 +50320,64 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.53739452, y: 2.42000008, z: 3.6036377}
   m_Center: {x: -.216197968, y: 0, z: -.120695114}
+--- !u!82 &2143696121
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2143696117}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &2145868029
 GameObject:
   m_ObjectHideFlags: 0

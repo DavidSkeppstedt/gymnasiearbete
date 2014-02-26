@@ -10,6 +10,7 @@ public class MenuStateHandler : MonoBehaviour {
 	}
 
 
+
 	public static float MOUSE_SENS = 0.5f;
 
 	public static States state;
@@ -30,9 +31,11 @@ public class MenuStateHandler : MonoBehaviour {
 
 		Debug.Log (state);
 
-	
-	
 	}
+
+
+
+
 
 
 	
