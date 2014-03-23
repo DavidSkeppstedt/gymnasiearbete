@@ -9,5 +9,7 @@ EditorBuildSettings:
     path: Assets/Screens/Menu/Scene/menu.unity
   - enabled: 1
     path: Assets/Screens/Game/Scene/game.unity
+  - enabled: 1
+    path: Assets/Screens/Game/Scene/gameover.unity
   - enabled: 0
     path: Assets/Screens/Game/Scene/test.unity

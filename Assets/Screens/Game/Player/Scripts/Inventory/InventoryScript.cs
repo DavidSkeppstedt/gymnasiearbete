@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class InventoryScript : MonoBehaviour {
-
+	//Variabler för att kontrollera vilka vapen spelaren har tagit upp och vilka lägen dessa vapen är i.
 	public GameObject[] weaponArray;
 	private bool pickedupPrimary;
 	private bool pickedupSecondary;
@@ -32,7 +32,7 @@ public class InventoryScript : MonoBehaviour {
 		if (Input.GetKey("1")) {
 			
 			if (currentWeapon != 0) {
-				if (pickedupPrimary) {
+				if (pickedupPrimary) { //Byter till pistolen här.
 					//SendMessage("setGun",weaponArray[0]);
 					weaponArray[1].gameObject.SendMessage("playDown");
 					currentWeapon = 0;
@@ -42,7 +42,7 @@ public class InventoryScript : MonoBehaviour {
 					//weaponArray[0].gameObject.SetActive(true);
 					//weaponArray[1].gameObject.SetActive(false);
 
-					Debug.Log("Changed to primary" + (1.0f / Time.deltaTime));
+					//Debug.Log("Changed to primary" + (1.0f / Time.deltaTime));
 				}
 			}
 			
@@ -72,7 +72,7 @@ public class InventoryScript : MonoBehaviour {
 			
 		}
 
-
+		//Om man håller på att byta så ändrar man lite variabler.
 		if (changing) {
 			toggled =true;
 			shootScript.setCanShoot(true);
@@ -88,7 +88,7 @@ public class InventoryScript : MonoBehaviour {
 
 
 
-		}else {
+		}else { //Annars nej, kan inte skjuita.
 
 			if (toggled){
 				toggled = false;
@@ -104,7 +104,7 @@ public class InventoryScript : MonoBehaviour {
 		
 		
 	}
-
+	//metoder för att bya från pistol till gäver, ändrar främst i olika variabler.
 	void fromGunToRifle(string downAnimation,string upAnimation, int deactive,int active) {
 		if (!weaponArray[deactive].animation.IsPlaying (downAnimation) && !downGun) {
 			//Detta innbär att animationen är klar
@@ -136,6 +136,7 @@ public class InventoryScript : MonoBehaviour {
 
 	}
 }
+	//Samma som ovan fast med gevär till pistol.
 	void fromRifleToGun(string downAnimation,string upAnimation, int deactive,int active) {
 		if (!weaponArray[deactive].animation.IsPlaying (downAnimation) && !downRifle) {
 			//Detta innbär att animationen är klar
@@ -168,6 +169,7 @@ public class InventoryScript : MonoBehaviour {
 
 
 	
+	//metod för att kontrollera om man tar upp det bättre vapnet och på så sätt tillåter att man byter til det via knapparna 1 och 2.
 	
 	void pickUp(int index) {
 		switch (index) {

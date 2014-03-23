@@ -2,7 +2,8 @@
 using System.Collections;
 
 public class PickupScript : MonoBehaviour {
-	
+	//Detta skript används för att kunna skapa roterande pickups som är placerade runt om i världen
+	//Spelare skall också då kunna ta upp den och får den till sin inverntory.
 	public int index;
 	private Vector3 rotationVector;
 	
@@ -16,10 +17,10 @@ public class PickupScript : MonoBehaviour {
 	void FixedUpdate () {
 		
 		
-		gameObject.transform.Rotate(rotationVector * Time.deltaTime);
+		gameObject.transform.Rotate(rotationVector * Time.deltaTime);//roterar GameObjectet
 	
 	}
-	
+	//När spelaren kolliderar med pickup.
 	void OnTriggerEnter(Collider other) {
 //		Debug.Log("index" + index);
         

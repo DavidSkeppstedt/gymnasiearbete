@@ -3,20 +3,20 @@ using System.Collections;
 
 public class SettingsMouse : MonoBehaviour {
 
+	//Vad slider UI elementet börjar på, dvs hälften.
 	public static float hValue = 0.5f;
+	//Ett skin för utseendet på slidern
 	public GUISkin skin;
+	
 	float scaleX = Screen.width/1920f;
 	float scaleY = Screen.height/1080f;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
 	
 	// Update is called once per frame
 	void Update () {
 
-
+		//Här kontrolleras vad som händer när man trycker på knappen Settings, det visas lite olika dialoger och en instaällningsruta kommer upp.
+		//Där kan man ändra en variabel som sparas i menustatehandler. Detta för att kunna ändra hastigheten på musen.
 		if (Input.GetButtonDown ("Settings")) {
 			if (MenuStateHandler.state != MenuStateHandler.States.OPTIONS) {
 				MenuStateHandler.state = MenuStateHandler.States.OPTIONS;
@@ -33,7 +33,7 @@ public class SettingsMouse : MonoBehaviour {
 
 	}
 
-
+//Samma som ovan fast här är det för slidern.
 	void OnGUI() {
 		GUI.skin = skin;
 		GUI.depth = 0;

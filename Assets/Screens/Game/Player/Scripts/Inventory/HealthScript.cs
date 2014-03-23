@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 public class HealthScript : MonoBehaviour {
-	
+	//Variabler som håller reda på spelarens progress, kanska självförklarande
 	public static int killed = 0;
 	public int Health = 100;
 	public GUIText HP_UI,HUD_ROUNDS;
@@ -19,7 +19,7 @@ public class HealthScript : MonoBehaviour {
 	
 	
 	void Update () {
-
+		//Uppdaterar det värden som behövs om något har förändrats pga spelarens handlingar, tex sätter den nya hälsan osv.
 		if (InventoryScript.currentWeapon == 0) {
 						HP_UI.text = ""+Health;
 						HUD_ROUNDS.text = ShootingScript.rounds+"/INF";
@@ -31,11 +31,11 @@ public class HealthScript : MonoBehaviour {
 		}
 		if (Health <= 0) {
 			
-			Die();
+			Die(); //Låter spelaren dö och gå tillbaka till menyn.
 		}
 		
 	}
-	
+	//Förlora hälsa, används i andra scripts.
 	void LoseHealth(int hp) {
 		Health -=hp;
 		//Debug.Log("I am hit! - " + Health);
@@ -44,7 +44,7 @@ public class HealthScript : MonoBehaviour {
 		
 	}
 	
-	
+	//Låter spelaren dö och gå tillbaka till menyn.
 	void Die() {
 		//Debug.Break();
 		 Application.LoadLevel(0);

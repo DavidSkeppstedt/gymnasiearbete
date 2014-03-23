@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class AnimationGun : MonoBehaviour {
-
+	//De olika animationsvariablerna som är unika för varje vapen.
 	public string fireAnim;
 	public string idleAnim;
 	public string upAnimation;
@@ -11,14 +11,10 @@ public class AnimationGun : MonoBehaviour {
 
 	public GameObject player;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
+
 	// Update is called once per frame
 	void Update () {
-	
+			//Olika kontroller för att spela upp rätt typ av animation och hindra från att man kan skjuta när vissa animationer spelas.
 		if (InventoryScript.currentWeapon == 0 ) {
 		if (Input.GetButtonDown ("Fire1") && (ShootingScript.rounds > 0 && InventoryScript.currentWeapon == 0 || ShootingScript.rifleRounds > 0 && InventoryScript.currentWeapon == 1)) {
 

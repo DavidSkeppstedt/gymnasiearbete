@@ -3,21 +3,12 @@ using System.Collections;
 
 public class DoorController : MonoBehaviour {
 
+	//Variabler som behövs för att sköta öppning och stängning av dörrar i spelets bana, deras ljud som skall spelas upp och rätt aniimationer.
 	public GameObject map;
 	public string open;
 	public string close;
 	public AudioClip open_door,close_door;
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
+	//Om man närmar sig dörren, öppnas den och rätt ljud spelas.
 	void OnTriggerEnter(Collider other) {
 		if (other.name =="PlayerObject") {
 			map.animation.PlayQueued (open);
@@ -25,6 +16,7 @@ public class DoorController : MonoBehaviour {
 		}
 
 	}
+	//Om man går ifrån , stängs dörren  och rätt ljud spelas.
 	void OnTriggerExit(Collider other) {
 		if (other.name =="PlayerObject") {
 			map.animation.PlayQueued(close);

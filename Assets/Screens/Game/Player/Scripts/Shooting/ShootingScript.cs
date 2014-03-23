@@ -3,10 +3,10 @@ using System.Collections;
 
 public class ShootingScript : MonoBehaviour {
 	
-	
+	//De variabler som behövs för skriptet.
 	private GameObject door;
 	public GameObject sparkWall;
-	public AudioClip rifleSound,gunSound,outofrounds;
+	public AudioClip rifleSound,gunSound,outofrounds; //Alla olika skjutljud
 	public GameObject muzzleFlash,rifleFlash;
 	private bool canShoot = true;
 	private bool changeWeapon = false;
@@ -26,6 +26,7 @@ public class ShootingScript : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+		//Kollar så att man har en pistol på sig.
 		gun = GameObject.Find("Gun");
 		Screen.lockCursor = true;
 		door = GameObject.Find("Level");
@@ -38,11 +39,11 @@ public class ShootingScript : MonoBehaviour {
 		
 		
 	}
-
+	//Setter för att skjuta, används ex av AnimGun osv.
 	public void setCanShoot(bool toogle) {
 		this.changeWeapon = toogle;
 	}
-
+	//Returenerar om man kan skjuta.
 	public bool getCanShoot() {
 		return this.changeWeapon;
 
@@ -50,26 +51,25 @@ public class ShootingScript : MonoBehaviour {
 
 
 
-
-
+	//Metod för att skjuta med pistolen.
 	public void ShootGun() {
 		RaycastHit hit;
-		
+		//En riktiningsvektor rakt fram.
 		Vector3 fwd = transform.TransformDirection(gun.transform.forward);
 		Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width*0.5f,Screen.height*0.5f,0));
-		int layerMask = 1<<9;
+		int layerMask = 1<<9; // Gör så att man inte kan träffa triggers
 		layerMask =~layerMask;
 	
 
 
-
+		//minskar ammonitionen
 		rounds -=1;
-		audio.PlayOneShot(gunSound);
+		audio.PlayOneShot(gunSound); // spelar upp ljud
 		StartCoroutine(muzzleOn());
 
 		canShoot = false;
 		countDown = true;
-
+		//Skjuter den riktiga strålen.
 		if (Physics.Raycast(ray,out hit, shootDistance,layerMask)) {
 			Debug.DrawLine(gun.transform.position,hit.point);
 			shoot(hit.collider,hit.point);
@@ -78,7 +78,7 @@ public class ShootingScript : MonoBehaviour {
 
 	}
 
-
+	//Samma som ovan fast med gevärt.
 	public void ShootRifle() {
 		RaycastHit hit;
 		
@@ -150,7 +150,7 @@ public class ShootingScript : MonoBehaviour {
 
 
 
-
+		/*Här kollas det om man har slut på skott på vapnet och således spelar upp ett slut på skott ljud.*/
 		if (Input.GetButtonDown("Fire1") && (rounds <= 0 && InventoryScript.currentWeapon == 0 || rifleRounds <= 0 && InventoryScript.currentWeapon == 1)) {
 
 			audio.PlayOneShot(outofrounds);
@@ -174,7 +174,7 @@ public class ShootingScript : MonoBehaviour {
 	// Here we check what is shot
 	private void shoot(Collider collider,Vector3 hit) {
 
-		//Instansierar hitsparks
+		//Instansierar hitsparks, partiklar som visar var man träffar.
 		GameObject clone = Instantiate(sparkWall, hit, collider.transform.rotation) as GameObject;
 
 		//Skickar ett meddelande till finde entitn att den skadas och på så vis exeveras kod hos den.
@@ -185,14 +185,14 @@ public class ShootingScript : MonoBehaviour {
 		
 		
 	}
-
+	//Metoder för att sätta på muzzelflashen i några sekunder för en snyggare vapen effekt.
 	IEnumerator muzzleOn() {
 
 		muzzleFlash.SetActive (true);
 		yield return new WaitForSeconds(0.1f);
 		muzzleFlash.SetActive (false);
 	}
-
+//Stänger av ovan.
 	IEnumerator rifleFlashOn() {
 		
 		rifleFlash.SetActive (true);
