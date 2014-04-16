@@ -5,10 +5,13 @@ public class MenuStateHandler : MonoBehaviour {
 	
 	//Deklarerar en typ för att hålla reda på vilket beteende som skall ske på skärmen
 	public enum States{
+		INTRO,
 		MENU,
 		OPTIONS,
 		ABOUT,
 	}
+
+	public GameObject movie;
 
 
 	//Även en statics variabel som används för musinställningar.
@@ -29,7 +32,29 @@ public class MenuStateHandler : MonoBehaviour {
 	}
 
 
+	void Update() {
+		if (state == States.INTRO) {
+			if (GameObject.Find("GUI") != null) {
+				GameObject.Find("GUI").SetActive(false);
+				GameObject.Find("Movie").SetActive(false);
+				GameObject.Find("Title").SetActive(false);
+				Camera.main.audio.Stop();
+			}
+			if (movie != null) {
+				movie.SetActive(true);
+			}
+		}
 
+
+		if (Input.anyKeyDown) {
+			if (state == States.INTRO) {
+				state = States.MENU;
+				Application.LoadLevel(1);
+			}
+		}
+
+
+	}
 
 
 

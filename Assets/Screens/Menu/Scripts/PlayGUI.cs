@@ -18,8 +18,8 @@ public class PlayGUI : MonoBehaviour {
 		//En ifsats som både initierar knappen och kollar om det blir tryck på.
 		if (GUI.Button (new Rect (Screen.width / 2 -(ScaleUtil.ScaleX(950)) , Screen.height / 2 - (ScaleUtil.ScaleY(150)), ScaleUtil.ScaleX(768), ScaleUtil.ScaleY(109)), "")) {
 			//Ändrar det läge som StateManager håller reda på.
-			MenuStateHandler.state = MenuStateHandler.States.MENU;
-			Application.LoadLevel(1);// Laddar in spelet.
+			MenuStateHandler.state = MenuStateHandler.States.INTRO;
+			//Application.LoadLevel(1);// Laddar in spelet.
 		}
 
 
