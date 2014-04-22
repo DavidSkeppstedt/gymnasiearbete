@@ -11,6 +11,7 @@ public class PlayGUI : MonoBehaviour {
 
 
 	void OnGUI() {
+		GUI.Label(new Rect(10, 10, 800, 20), "Created by Ben Forsrup, David Skeppstedt, Sebastian Svensson & Oscar Andersson");
 		//Tilldelar det skin som refererades innan.
 		GUI.skin = skin;
 		//Lägger knappen på 0 lagret på skärmen.
@@ -23,7 +24,7 @@ public class PlayGUI : MonoBehaviour {
 		}
 
 
-
+		//GUI.Label(new Rect(10, 10, 300, 20), "Created by Ben Forsrup, David Skeppstedt, Sebastian Svensson & Oscar Andersson");
 
 	}
 

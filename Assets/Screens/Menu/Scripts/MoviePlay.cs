@@ -9,9 +9,15 @@ public class MoviePlay : MonoBehaviour {
 
 	void Awake() {
 		//Ställer in de uppgifter som krävs för att filmen skall spelas och loopas.
-		movieTex = renderer.material.mainTexture as MovieTexture;
+
+		//movieTex = renderer.material.mainTexture as MovieTexture;
 		movieTex.loop = true;
 		movieTex.Play ();
+	}
+
+	void OnGUI() {
+		GUI.DrawTexture(new Rect(0,0,Screen.width,Screen.height),movieTex,ScaleMode.StretchToFill);
+
 	}
 
 
